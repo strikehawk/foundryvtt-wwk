@@ -1,4 +1,5 @@
 import { ItemSheetBehaviorBase } from "./item-sheet.behavior.mjs";
+import { ArchetypeTalentFormApplication } from "./item-talent.form.mjs";
 import { getSkillIdentifier } from "../helpers/templates.mjs";
 
 export class ItemSheetHeroArchetypeBehavior extends ItemSheetBehaviorBase {
@@ -30,6 +31,10 @@ export class ItemSheetHeroArchetypeBehavior extends ItemSheetBehaviorBase {
         this.talents = ItemSheetHeroArchetypeBehavior._getTalentMap();
     }
 
+    activateListeners(html) {
+        html.find('.talent-edit').click(this._onTalentEdit.bind(this));
+    }
+
     patchContext(context) {
         // Handle skills.
         for (let [k, v] of Object.entries(context.data.skills)) {
@@ -39,79 +44,41 @@ export class ItemSheetHeroArchetypeBehavior extends ItemSheetBehaviorBase {
             // Calculate the final value of the skill
             v.value = v.baseValue + (v.augmented ? 2 : 0) + v.modifier;
         }
-
-        // Handle talents
-        const talentItems = [];
-        let talentId;
-        for (const id of Object.keys(context.data.talents)) {
-            talentId = context.data.talents[id];
-            talentItems.push(this.talents.get(talentId));
-        }
-        context.data.talentItems = talentItems;
     }
 
-    _updateObject(event, formData) {
-        // Transform talents property
-        let talents = [];
-        for (const key of Object.keys(formData)) {
-            if (key.startsWith("data.talents.")) {
-                let index = key.replace("data.talents.", "");
-                talents[index] = formData[key];
-            }
+    // _updateObject(event, formData) {
+    //     const talents = this.sheet.object.data.data.talents;
+
+    //     let talent;
+    //     for (let i = 0; i < talents.length; i++) {
+    //         talent = talents[i];
+    //         formData[`data.talents.${i}.name`] = talent.name;
+    //         formData[`data.talents.${i}.normalEffect`] = talent.normalEffect;
+    //         formData[`data.talents.${i}.heroicEffect`] = talent.heroicEffect;
+    //     }
+    // }
+    
+    _onTalentEdit(event) {
+        event.preventDefault();
+    
+        const li = $(event.currentTarget).parents(".talent");
+        const index = li.data("index");
+        const talent = this.item.data.data.talents[index];
+
+        if (!talent) {
+            console.warn(`No talent found`);
         }
 
-        formData["data.talents"] = talents;
-
-        super._updateObject(event, formData);
+        this._displayTalentForm(event, talent);
     }
 
-    /** @inheritdoc */
-    _onDragOver(event) {
-        // Try to extract the data
-        const item = this._parseDataTransferItem(event.dataTransfer);
-
-        // if (!item || item.data.type !== "talent") {
-        //     event.dataTransfer.dropEffect = "none";
-        // } else {
-        //     event.dataTransfer.dropEffect = "link";
-        // }
-    }
-
-    /** @inheritdoc */
-    _onDrop(event) {
-        // Try to extract the data
-        const item = this._parseDataTransferItem(event.dataTransfer);
-
-        if (!item || item.data.type !== "talent") {
-            return;
-        }
-
-        if (event.target.classList.contains("droppable")) {
-            event.target.value = item.data.data["talent-id"];
-        }
-    }
-
-    _parseDataTransfer(dataTransfer) {
-        // Try to extract the data
-        let data;
-        try {
-            data = JSON.parse(dataTransfer.getData('text/plain'));
-        } catch (err) {
-            return false;
-        }
-
-        return data;
-    }
-
-    _parseDataTransferItem(dataTransfer) {
-        const data = this._parseDataTransfer(dataTransfer);
-
-        if (!data || data.type !== "Item") {
-            return null;
-        }
-
-        const item = game.collections.get("Item").get(data.id);
-
-        return item;
+    _displayTalentForm(event, talent) {
+        const options = {
+            left: event.pageX,
+            top: event.pageY,
+        };
+    
+        const vm = { talent, sheet: this.sheet };
+        new ArchetypeTalentFormApplication(vm, options).render(true);
     }
 }

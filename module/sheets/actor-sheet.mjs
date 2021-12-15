@@ -50,6 +50,7 @@ export class WwkActorSheet extends ActorSheet {
     if (actorData.type == 'hero') {
       this._prepareItems(context);
       this._prepareCharacterData(context);
+      this._computeModifiers(context);
     }
 
     // Add roll data for TinyMCE editors.
@@ -68,66 +69,109 @@ export class WwkActorSheet extends ActorSheet {
    *
    * @return {undefined}
    */
-  _prepareCharacterData(context) {
-    context.data.viewMode = true;
-
-    // Handle skills.
-    for (let [k, v] of Object.entries(context.data.skills)) {
-      v.label = game.i18n.localize(CONFIG.WWK.skills[k]) ?? k;
-      v.uuid = getSkillIdentifier(k, v);
-
-      // Calculate the final value of the skill
-      v.value = v.baseValue + (v.augmented ? 2 : 0) + v.modifier;
-    }
-  }
-
-  /**
-   * Organize and classify Items for Character sheets.
-   *
-   * @param {Object} actorData The actor to prepare.
-   *
-   * @return {undefined}
-   */
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
+    let archetype;
+    let profile;
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to gear.
-      if (i.type === 'item') {
+      if (i.type === "item") {
         gear.push(i);
       }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
+      // Set archetype.
+      else if (i.type === "hero-archetype") {
+        archetype = i;
       }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.data.spellLevel != undefined) {
-          spells[i.data.spellLevel].push(i);
-        }
+      // Set profile.
+      else if (i.type === 'profile') {
+        profile = i;
       }
     }
 
     // Assign and return
     context.gear = gear;
-    context.features = features;
-    context.spells = spells;
+    context.archetype = archetype;
+    context.profile = profile;
+  }
+
+  /**
+   * Parse & prepare Character data.
+   *
+   * @param {Object} actorData The actor to prepare.
+   *
+   * @return {undefined}
+   */
+  _prepareCharacterData(context) {
+    context.data.viewMode = true;
+
+    if (!context.archetype) {
+      return;
+    }
+
+    const archetype = context.archetype;
+
+    // Handle resources.
+    context.data.resources.hp.max.baseValue = archetype.data.resources.hp;
+    context.data.resources.wounds.max.baseValue = archetype.data.resources.wounds;
+
+    // Handle damage bonus
+    context.data.damageBonus.melee.baseValue = archetype.data.damageBonus.melee;
+    context.data.damageBonus.ranged.baseValue = archetype.data.damageBonus.ranged;
+
+    // Handle skills.
+    const currentSkills = context.data.skills;
+    const newSkills = {};
+
+    let currentSkill;
+    let skill;
+    for (let [k, v] of Object.entries(archetype.data.skills)) {
+      currentSkill = currentSkills[k];
+
+      skill = foundry.utils.deepClone(v);
+      skill.label = game.i18n.localize(CONFIG.WWK.skills[k]) ?? k;
+      skill.uuid = getSkillIdentifier(k, skill);
+
+      newSkills[k] = skill;
+    }
+
+    context.data.skills = newSkills;
+  }
+
+  _computeModifiers(context) {
+    // Handle resources.
+    this._processModifiableValue(context.data.resources.hp.max);
+    this._processModifiableValue(context.data.resources.wounds.max);
+
+    // Handle damage bonus.
+    this._processModifiableValue(context.data.damageBonus.melee);
+    this._processModifiableValue(context.data.damageBonus.ranged);
+
+    // Handle skills.
+    for (let [k, v] of Object.entries(context.data.skills)) {
+      this._processModifiableValue(v);
+    }
+  }
+
+  _processModifiableValue(v) {
+    let sumModifiers;
+
+    // Compute sum of modifiers
+    sumModifiers = 0;
+    if (v.modifiers) {
+      for (const mod of v.modifiers) {
+        sumModifiers += mod.value;
+      }
+    } else {
+      v.modifiers = [];
+    }
+    v.modifier = sumModifiers;
+
+    // Calculate the final value
+    v.value = v.baseValue + v.modifier;
   }
 
   /* -------------------------------------------- */

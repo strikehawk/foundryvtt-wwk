@@ -8,7 +8,7 @@
                     <div class="flexrow flex-group-left">
                         <div class="header-fields">
                             <h1 class="charname"><input name="name" type="text" value="{{item.name}}"
-                                    placeholder="Name" />
+                                    placeholder="Nom" />
                             </h1>
                         </div>
                     </div>
@@ -74,38 +74,27 @@
 
             <div class="fxLayoutColumn fxLayoutGap-8 talents">
                 <div class="title-2">Atouts</div>
-                <div class="fxLayoutRow fxFlex fxLayoutGap-8">
-                    <input name="data.talents.0" type="text" class="droppable fxFlex" data-dtype="String"
-                        placeholder="Déposer ici un Atout" readonly="true" value="{{data.talents.[0]}}" />
-                    <input name="data.talents.1" type="text" class="droppable fxFlex" data-dtype="String"
-                        placeholder="Déposer ici un Atout" readonly="true" value="{{data.talents.[1]}}" />
-                </div>
                 <div class="fxLayoutRow align-items-start fxLayoutGap-16 talents">
-                    {{#each data.talentItems as |talent id|}}
-                    {{#if talent}}
-                    <section class="fxLayoutColumn fxFlex fxLayoutGap-8 talent" data-talent="{{talent}}">
+                    {{#each data.talents as |talent id|}}
+                    <section class="fxLayoutColumn fxFlex fxLayoutGap-8 talent" data-index="{{id}}">
                         <div class="fxLayoutRow fxLayoutGap-8">
                             <div class="title-2 fxFlex">{{talent.name}}</div>
-                            <a class="action-icon edit-talent" title="Editer Atout"><i class="fas fa-edit"></i></a>
+                            <input type="hidden" name="data.talents.{{id}}.name" value="{{talent.name}}"/>
+                            <a class="action-icon talent-edit" title="Editer Atout"><i class="fas fa-edit"></i></a>
                         </div>
                         <div class="fxLayoutColumn fxFlex">
                             <div class="title-3">Effet normal</div>
-                            <div class="free-text">{{readonlyEditor content=talent.data.data.normalEffect
+                            <input type="hidden" name="data.talents.{{id}}.normalEffect" value="{{talent.normalEffect}}"/>
+                            <div class="free-text">{{readonlyEditor content=talent.normalEffect
                                 rollData=rollData owner=owner}}</div>
                         </div>
                         <div class="fxLayoutColumn fxFlex">
                             <div class="title-3">Effet héroïque</div>
-                            <div class="free-text">{{readonlyEditor content=talent.data.data.heroicEffect
+                            <input type="hidden" name="data.talents.{{id}}.heroicEffect" value="{{talent.heroicEffect}}"/>
+                            <div class="free-text">{{readonlyEditor content=talent.heroicEffect
                                 rollData=rollData owner=owner}}</div>
                         </div>
                     </section>
-                    {{/if}}
-                    {{#unless talent}}
-                    <section class="fxLayoutRow fxFlex fxLayoutGap-8">
-                        <div>Créez un Atout</div>
-                        <a class="action-icon edit-talent" title="Editer Atout"><i class="fas fa-edit"></i></a>
-                    </section>
-                    {{/unless}}
                     {{/each}}
                 </div>
 
@@ -120,6 +109,7 @@
             <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
                 <div class="remove-bottom-padding">{{skill.label}}</div>
                 {{#if skill.specialized}}
+                <input name="data.skills.{{id}}.specializations" type="text" data-dtype="String" value="{{skill.specializations}}" />
                 {{/if}}
                 <div class="dotted-line fxFlex"></div>
             </div>

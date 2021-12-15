@@ -1,33 +1,23 @@
 <form class="{{cssClass}} talents fxLayoutColumn" autocomplete="off">
-  <header class="sheet-header fxLayoutColumn">
-    <div class="fxLayoutRow fxLayoutGap-8">
-      <span class="title-2">ID Atout</span>
-      <input class="fxFlex" name="data.talent-id" type="text" value="{{data.talent-id}}" placeholder="ID Talent"
-        data-dtype="String" />
-    </div>
-  </header>
-
   <section class="fxLayoutColumn fxLayoutGap-8 fxFlex">
     <div class="fxLayoutRow fxLayoutGap-8">
       <div class="title-2">Nom</div>
-      <input class="fxFlex" name="name" type="text" value="{{item.name}}" placeholder="Nom" data-dtype="String" />
+      <input class="fxFlex" name="name" type="text" value="{{object.name}}" placeholder="Nom" data-dtype="String" />
     </div>
 
     <div class="fxLayoutColumn fxFlex">
       <div class="title-2">Effet normal</div>
       <div class="free-text fxFlex">
-        {{editor content=data.normalEffect target="data.normalEffect" rollData=rollData button=true editable=editable
-        owner=owner
-        editable=editable}}
+        {{editor content=object.normalEffect target="normalEffect" rollData=rollData button=true editable=true
+        owner=owner}}
       </div>
     </div>
 
     <div class="fxLayoutColumn fxFlex">
       <div class="title-2">Effet héroïque</div>
       <div class="free-text fxFlex">
-        {{editor content=data.heroicEffect target="data.heroicEffect" rollData=rollData button=true editable=editable
-        owner=owner
-        editable=editable}}
+        {{editor content=object.heroicEffect target="heroicEffect" rollData=rollData button=true editable=true
+        owner=owner}}
       </div>
     </div>
   </section>

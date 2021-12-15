@@ -16,12 +16,17 @@
 /* Styles limited to boilerplate sheets */
 .wwk {
   @import 'components/forms';
-  @import 'components/resource';
   @import 'components/items';
   @import 'components/effects';
   @import 'components/combat';
   @import 'components/skills';
   @import 'components/talents';
+}
+
+.title-1 {
+  font-family: "El Tercer Hombre";
+  font-size: 46px;
+  text-transform: uppercase;
 }
 
 .title-2 {
@@ -43,9 +48,16 @@
   transform: translateY(4px);
 }
 
-.action-icon {
+.font-weight-normal {
+  font-weight: normal;
+}
+
+.action-icon, .action-icon-large {
   font-size: 12px;
   text-align: center;
-  margin: 0 6px;
   flex-grow: 0;
+}
+
+.action-icon-large {
+  font-size: 16px;
 }

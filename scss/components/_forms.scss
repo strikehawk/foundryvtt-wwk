@@ -83,12 +83,22 @@ textarea {
   resize: none;
 }
 
-.remove-bottom-padding {
-  transform: translateY(4px);
+.remove-transform {
+  transform: none;
 }
 
 .dotted-line {
   border-bottom: 1px dashed #7a7971;
+}
+
+.drop-zone {
+  border: 1px dashed #7a7971;
+  border-radius: 4px;
+}
+
+div.numerical-value, span.numerical-value {
+  width: 20px;
+  text-align: center;
 }
 
 input[type="text"],input[type="number"] {

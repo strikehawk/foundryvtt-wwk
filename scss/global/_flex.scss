@@ -123,12 +123,20 @@
   flex: 1;
 }
 
+.axis-align-center {
+  justify-content: center;
+}
+
 .align-items-start {
   align-items: flex-start;
 }
 
 .align-items-end {
   align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
 }
 
 .align-items-stretch {

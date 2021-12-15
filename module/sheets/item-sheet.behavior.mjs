@@ -1,6 +1,6 @@
 import { WWK } from "../helpers/config.mjs";
-import { WWKSettings } from "../helpers/wwk-settings.mjs";
 import { WwkItem } from "../documents/item.mjs";
+import { WWKSettings } from "../helpers/wwk-settings.mjs";
 
 /** @type {WWKSettings} */
 const wwkGlobal = WWK;

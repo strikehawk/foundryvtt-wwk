@@ -321,6 +321,12 @@
   flex: 1;
 }
 
+.axis-align-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .align-items-start {
   -webkit-box-align: start;
   -ms-flex-align: start;
@@ -331,6 +337,12 @@
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .align-items-stretch {
@@ -461,14 +473,24 @@
   resize: none;
 }
 
-.wwk .remove-bottom-padding {
-  -webkit-transform: translateY(4px);
-  -ms-transform: translateY(4px);
-  transform: translateY(4px);
+.wwk .remove-transform {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 .wwk .dotted-line {
   border-bottom: 1px dashed #7a7971;
+}
+
+.wwk .drop-zone {
+  border: 1px dashed #7a7971;
+  border-radius: 4px;
+}
+
+.wwk div.numerical-value, .wwk span.numerical-value {
+  width: 20px;
+  text-align: center;
 }
 
 .wwk input[type="text"].numerical-value, .wwk input[type="number"].numerical-value {
@@ -478,16 +500,6 @@
 
 .wwk .free-text {
   min-height: 60px;
-}
-
-.wwk .resource-label {
-  font-family: "Saint Tropez";
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.wwk .resource {
-  line-height: 26px;
 }
 
 .wwk .items-header {
@@ -806,6 +818,12 @@
   height: 100%;
 }
 
+.title-1 {
+  font-family: "El Tercer Hombre";
+  font-size: 46px;
+  text-transform: uppercase;
+}
+
 .title-2 {
   font-family: "Saint Tropez";
   font-size: 16px;
@@ -827,11 +845,18 @@
   transform: translateY(4px);
 }
 
-.action-icon {
+.font-weight-normal {
+  font-weight: normal;
+}
+
+.action-icon, .action-icon-large {
   font-size: 12px;
   text-align: center;
-  margin: 0 6px;
   -webkit-box-flex: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
+}
+
+.action-icon-large {
+  font-size: 16px;
 }

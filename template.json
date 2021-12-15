@@ -4,172 +4,68 @@
             "hero"
         ],
         "templates": {
-            "background": {
-                "occupation": "",
-                "biography": "",
-                "quote": ""
-            },
             "resources": {
-                "hp": {
-                    "value": 0,
-                    "min": 0,
-                    "max": 20
-                },
-                "wounds": {
-                    "value": 0,
-                    "min": 0,
-                    "max": 10
+                "resources": {
+                    "hp": {
+                        "value": 10,
+                        "max": {
+                            "id": "resources.hp.max",
+                            "label": "Points de Vitalité (max)",
+                            "value": 10,
+                            "baseValue": 10,
+                            "modifier": 0,
+                            "modifiers": []
+                        }
+                    },
+                    "wounds": {
+                        "value": 0,
+                        "max": {
+                            "id": "resources.wounds.max",
+                            "label": "Blessures (max)",
+                            "value": 5,
+                            "baseValue": 5,
+                            "modifier": 0,
+                            "modifiers": []
+                        }
+                    }
                 }
+
             },
             "damageBonusSet": {
                 "damageBonus": {
-                    "melee": 2,
-                    "ranged": 2
+                    "melee": {
+                        "id": "damageBonus.melee",
+                        "label": "Bonus aux Dégâts (Corps à corps)",
+                        "value": 2,
+                        "baseValue": 2,
+                        "modifier": 0,
+                        "modifiers": []
+                    },
+                    "ranged": {
+                        "id": "damageBonus.ranged",
+                        "label": "Bonus aux Dégâts (Distance)",
+                        "value": 2,
+                        "baseValue": 2,
+                        "modifier": 0,
+                        "modifiers": []
+                    }
                 }
             },
             "skillSet": {
-                "skills": {
-                    "acrobatie": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "athletisme": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "autorite": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "combat-cac": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "combat-distance": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "connaissance": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0,
-                        "specialized": true,
-                        "specializations": "Démolition"
-                    },
-                    "defense": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "discretion": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "documentation": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "eloquence": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "equitation": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "intellect": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "langue": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0,
-                        "specialized": true,
-                        "specializations": "Anglais, Espagnol, Français"
-                    },
-                    "muscles": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "pilotage": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0,
-                        "specialized": true,
-                        "specializations": "Moto"
-                    },
-                    "perception": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "psychologie": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "reflexes": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "resistance": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "soins": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "survie": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    },
-                    "technique": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0,
-                        "specialized": true,
-                        "specializations": "Mécanique"
-                    },
-                    "volonte": {
-                        "baseValue": 2,
-                        "augmented": false, 
-                        "modifier": 0
-                    }
-                }
+                "skills": {}
             }
         },
         "hero": {
             "templates": [
-                "background",
                 "resources",
                 "damageBonusSet",
                 "skillSet"
-            ],
-            "character": ""
+            ]
         }
     },
     "Item": {
         "types": [
             "hero-archetype",
-            "skillBonus",
-            "talent",
             "profile",
             "profileFeature"
         ],
@@ -189,7 +85,6 @@
         },
         "hero-archetype": {
             "description": {
-                "name": "",
                 "occupation": "",
                 "bio": "",
                 "quote": ""
@@ -347,16 +242,6 @@
             ],
             "specialized": false,
             "specializations": ""
-        },
-        "skillBonus": {
-            "skill": "",
-            "specialization": "",
-            "bonus": 2
-        },
-        "talent": {
-            "talent-id": "",
-            "normalEffect": "",
-            "heroicEffect": ""
         },
         "profile": {
             "name": "XXX",
