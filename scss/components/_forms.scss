@@ -1,0 +1,104 @@
+.item-form {
+  font-family: $font-primary;
+}
+
+.sheet-header {
+  flex: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+  .profile-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+
+  .header-fields {
+    flex: 1;
+  }
+
+  h1.charname {
+    height: 30px;
+    padding: 0px;
+    margin: 5px 0;
+    border-bottom: 0;
+
+    input {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      font-size: 20px;
+    }
+  }
+}
+
+.sheet-tabs {
+  flex: 0;
+}
+
+.sheet-body,
+.sheet-body .tab,
+.sheet-body .tab .editor {
+  height: 100%;
+}
+
+.tox {
+  .tox-editor-container {
+    background: $c-white;
+  }
+
+  .tox-edit-area {
+    padding: 0 8px;
+  }
+}
+
+/* Text Input */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+}
+
+textarea {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1px 3px;
+  margin: 0;
+  color: #191813;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  line-height: inherit;
+  border: 1px solid #7a7971;
+  border-radius: 3px;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  resize: none;
+}
+
+.remove-bottom-padding {
+  transform: translateY(4px);
+}
+
+.dotted-line {
+  border-bottom: 1px dashed #7a7971;
+}
+
+input[type="text"],input[type="number"] {
+  &.numerical-value {
+    width: 30px;
+    text-align: center;
+  }
+}
+
+.free-text {
+  // height: 60px;
+  min-height: 60px;
+}

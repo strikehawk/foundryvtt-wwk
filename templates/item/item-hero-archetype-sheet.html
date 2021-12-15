@@ -1,0 +1,131 @@
+<form class="{{cssClass}} hero-archetype-form fxLayoutRow align-items-start fxLayoutGap-16" autocomplete="off">
+    <div class="fxFlex">
+        <div class="sheet-header fxLayoutRow fxLayoutGap-8">
+            <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="100"
+                width="100" />
+            <section class="fxFlex">
+                <div class="fxLayoutColumn fxLayoutGap-8 align-items-stretch">
+                    <div class="flexrow flex-group-left">
+                        <div class="header-fields">
+                            <h1 class="charname"><input name="name" type="text" value="{{item.name}}"
+                                    placeholder="Name" />
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div class="fxLayoutColumn flex-group-left align-items-stretch fxLayoutGap-4">
+                        <div class="field-label">Occupation</div>
+                        <input name="data.description.occupation" type="text" class="resource-value" data-dtype="String"
+                            value="{{ data.description.occupation }}" />
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="fxLayoutColumn fxLayoutGap-8">
+            <div class="fxLayoutColumn flex-group-left fxLayoutGap-4">
+                <div class="field-label">Biographie</div>
+                <textarea name="data.description.bio" class="fxFlex" data-dtype="String" rows="8"
+                    cols="80">{{ data.description.bio }}</textarea>
+            </div>
+
+            <div class="fxLayoutColumn flex-group-left fxLayoutGap-4">
+                <div class="field-label">Citation</div>
+                <textarea name="data.description.quote" class="fxFlex" data-dtype="String" rows="3"
+                    cols="80">{{ data.description.quote }}</textarea>
+            </div>
+
+            <div class="fxLayoutRow flex-group-left fxLayoutGap-8">
+                <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                    <div class="field-label">Points de Vitalité</div>
+                    <div class="dotted-line fxFlex"></div>
+                </div>
+                <input name="data.resources.hp" type="text" class="numerical-value" data-dtype="Number"
+                    value="{{numberFormat data.resources.hp decimals=0}}" />
+            </div>
+
+            <div class="fxLayoutRow fxLayoutGap-8">
+                <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                    <div class="field-label">Blessures</div>
+                    <div class="dotted-line fxFlex"></div>
+                </div>
+                <input name="data.resources.wounds" type="text" class="numerical-value" data-dtype="Number"
+                    value="{{numberFormat data.resources.wounds decimals=0}}" />
+            </div>
+
+            <div class="fxLayoutRow fxLayoutGap-8">
+                <div class="field-label">Bonus Dégâts</div>
+                <div class="fxLayoutRow fxLayoutGap-8 fxFlex">
+                    <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                        <div class="remove-bottom-padding">Corps à corps</div>
+                        <div class="dotted-line fxFlex"></div>
+                    </div>
+                    <input name="data.damageBonus.melee" type="text" class="numerical-value" data-dtype="Number"
+                        value="{{numberFormat data.damageBonus.melee decimals=0}}" />
+                </div>
+                <div class="fxLayoutRow fxLayoutGap-8 fxFlex">
+                    <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                        <div class="remove-bottom-padding">Distance</div>
+                        <div class="dotted-line fxFlex"></div>
+                    </div>
+                    <input name="data.damageBonus.ranged" type="text" class="numerical-value" data-dtype="Number"
+                        value="{{numberFormat data.damageBonus.ranged decimals=0}}" />
+                </div>
+            </div>
+
+            <div class="fxLayoutColumn fxLayoutGap-8 talents">
+                <div class="title-2">Atouts</div>
+                <div class="fxLayoutRow fxFlex fxLayoutGap-8">
+                    <input name="data.talents.0" type="text" class="droppable fxFlex" data-dtype="String"
+                        placeholder="Déposer ici un Atout" readonly="true" value="{{data.talents.[0]}}" />
+                    <input name="data.talents.1" type="text" class="droppable fxFlex" data-dtype="String"
+                        placeholder="Déposer ici un Atout" readonly="true" value="{{data.talents.[1]}}" />
+                </div>
+                <div class="fxLayoutRow align-items-start fxLayoutGap-16 talents">
+                    {{#each data.talentItems as |talent id|}}
+                    {{#if talent}}
+                    <section class="fxLayoutColumn fxFlex fxLayoutGap-8 talent" data-talent="{{talent}}">
+                        <div class="fxLayoutRow fxLayoutGap-8">
+                            <div class="title-2 fxFlex">{{talent.name}}</div>
+                            <a class="action-icon edit-talent" title="Editer Atout"><i class="fas fa-edit"></i></a>
+                        </div>
+                        <div class="fxLayoutColumn fxFlex">
+                            <div class="title-3">Effet normal</div>
+                            <div class="free-text">{{readonlyEditor content=talent.data.data.normalEffect
+                                rollData=rollData owner=owner}}</div>
+                        </div>
+                        <div class="fxLayoutColumn fxFlex">
+                            <div class="title-3">Effet héroïque</div>
+                            <div class="free-text">{{readonlyEditor content=talent.data.data.heroicEffect
+                                rollData=rollData owner=owner}}</div>
+                        </div>
+                    </section>
+                    {{/if}}
+                    {{#unless talent}}
+                    <section class="fxLayoutRow fxFlex fxLayoutGap-8">
+                        <div>Créez un Atout</div>
+                        <a class="action-icon edit-talent" title="Editer Atout"><i class="fas fa-edit"></i></a>
+                    </section>
+                    {{/unless}}
+                    {{/each}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="fxLayoutColumn fxFlex fxLayoutGap-8">
+        <div class="title-2">Compétences</div>
+        {{#each data.skills as |skill id|}}
+        <div class="fxLayoutRow fxLayoutGap-8 fxFlex">
+            <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                <div class="remove-bottom-padding">{{skill.label}}</div>
+                {{#if skill.specialized}}
+                {{/if}}
+                <div class="dotted-line fxFlex"></div>
+            </div>
+            <input name="data.skills.{{id}}.baseValue" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat skill.baseValue decimals=0}}" />
+        </div>
+        {{/each}}
+    </div>
+</form>

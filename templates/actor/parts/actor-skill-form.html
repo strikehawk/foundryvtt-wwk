@@ -1,0 +1,20 @@
+<form class="{{cssClass}} actor-skill-form" autocomplete="off">
+    <div class="skill-name flexrow">{{object.label}}</div>
+    {{#if object.specialized}}
+    <div class="skill-specializations flexrow">
+        <div>Specialization</div>
+        <input type="text" class="skill-specializations" name="specializations" data-dtype="String"
+            value="{{object.specializations}}" />
+    </div>
+    {{/if}}
+    <div class="skill-base-value flexrow">
+        <span>Base value</span>
+        <input type="text" class="skill-value" name="baseValue" data-dtype="Number"
+            value="{{numberFormat object.baseValue decimals=0}}" />
+    </div>
+    <div class="skill-augmented flexrow">
+        <span>Augmented</span>
+        <input type="checkbox" name="augmented" data-dtype="Boolean" value="true" {{#if
+            object.augmented}}checked{{/if}} />
+    </div>
+</form>

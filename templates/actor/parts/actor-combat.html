@@ -1,0 +1,35 @@
+<ol class="items-list combat">
+    <li class="resource flexrow flex-group-left">
+        <div class="resource-name">Points de Vitalité</div>
+        <input name="data.hp.value" type="text" class="resource-value" data-dtype="Number"
+            value="{{numberFormat data.hp.value decimals=0}}" />
+        <span class="resource-separator">/</span>
+        <input name="data.hp.max" type="text" class="resource-value" data-dtype="Number"
+            value="{{numberFormat data.hp.max decimals=0}}" />
+    </li>
+
+    <li class="resource flexrow flex-group-left">
+        <div class="resource-name">Blessures</div>
+        <input name="data.wounds.value" type="text" class="resource-value" data-dtype="Number"
+            value="{{numberFormat data.wounds.value decimals=0}}" />
+        <span class="resource-separator">/</span>
+        <input name="data.wounds.max" type="text" class="resource-value" data-dtype="Number"
+            value="{{numberFormat data.wounds.max decimals=0}}" />
+    </li>
+
+    <li class="resource flexrow flex-group-left">
+        <div class="resource-name">Bonus Dégâts</div>
+    </li>
+
+    <li class="resource flexrow flex-group-left">
+        <div>Corps à corps</div>
+        <input name="data.damageBonus.melee" type="text" class="resource-value" data-dtype="Number"
+            value="{{numberFormat data.damageBonus.melee decimals=0 sign=true}}" />
+    </li>
+
+    <li class="resource flexrow flex-group-left">
+        <div>Distance</div>
+        <input name="data.damageBonus.ranged" type="text" class="resource-value" data-dtype="Number"
+            value="{{numberFormat data.damageBonus.ranged decimals=0 sign=true}}" />
+    </li>
+</ol>

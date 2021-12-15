@@ -1,0 +1,98 @@
+.skills {
+    .skill {
+        border: none;
+        margin-bottom: 5px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-name {
+            color: $c-dark;
+        }
+    }
+
+    a.skill-control, a.skill-roll {
+        font-size: 12px;
+        text-align: center;
+        margin: 0 6px;
+        flex-grow: 0;
+    }
+
+    a.skill-roll {
+        font-size: 16px;
+    }
+
+    .skill-current-value {
+        flex: 0;
+    }
+
+    .skill-value {
+        width: 35px;
+        text-align: center;
+    }
+
+    .skill-augment {
+
+        flex: 0 0 50px;
+
+        input[type="checkbox"] {
+            height: 16px;
+            width: 16px;
+            margin: 2px;
+        }
+
+        span {
+            font-size: 10px;
+        }
+    }
+}
+
+.actor-skill-form {
+    >div.flexrow {
+        margin-bottom: 8px;
+        line-height: 26px;
+        vertical-align: middle;
+        align-items: center;
+
+        &:last-child {
+            margin-bottom: none;
+        }
+    }
+
+    .skill-name {
+        font-weight: bold;
+    }
+
+    .skill-base-value {
+        display: flex;
+        line-height: 26px;
+
+        span {
+            flex-grow: 1;
+
+        }
+
+        .skill-value {
+            width: 35px;
+            text-align: center;
+            flex: 0 0 35px;
+        }
+    }
+
+    .skill-augmented {
+        display: flex;
+
+        span {
+            flex-grow: 1;
+            vertical-align: middle;
+        }
+
+        input[type="checkbox"] {
+            flex-grow: 0;
+            height: 16px;
+            width: 16px;
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+// Add custom fonts by visiting and search https://fonts.google.com
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+// Import utilities.
+@import 'utils/typography';
+@import 'utils/colors';
+@import 'utils/mixins';
+@import 'utils/variables';
+
+/* Global styles */
+@import 'global/window';
+@import 'global/grid';
+@import 'global/flex';
+@import 'global/fonts';
+
+/* Styles limited to boilerplate sheets */
+.wwk {
+  @import 'components/forms';
+  @import 'components/resource';
+  @import 'components/items';
+  @import 'components/effects';
+  @import 'components/combat';
+  @import 'components/skills';
+  @import 'components/talents';
+}
+
+.title-2 {
+  font-family: "Saint Tropez";
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.title-3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.field-label {
+  font-family: "Saint Tropez";
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: translateY(4px);
+}
+
+.action-icon {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+  flex-grow: 0;
+}

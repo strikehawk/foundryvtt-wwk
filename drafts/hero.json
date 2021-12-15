@@ -1,0 +1,116 @@
+{
+    "data": {
+        "description": {
+            "name": "Kenneth Green",
+            "occupation": "Ouvrier",
+            "bio": "bla bla bla",
+            "quote": "bla bla quote"
+        },
+        "resources": {
+            "hp": {
+                "value": 18,
+                "max": {
+                    "id": "resources.hp.max",
+                    "label": "Points de Vitalité (max)",
+                    "value": 18,
+                    "baseValue": 13,
+                    "modifier": 5,
+                    "modifiers": [
+                        {
+                            "id": "betsy.bestialite.hp.bonus",
+                            "label": "Souche 'Bestialité' (+5)",
+                            "value": 5
+                        }
+                    ]
+                }
+            },
+            "wounds": {
+                "value": 10,
+                "max": {
+                    "id": "resources.wounds.max",
+                    "label": "Blessures (max)",
+                    "value": 10,
+                    "baseValue": 7,
+                    "modifier": 3,
+                    "modifiers": [
+                        {
+                            "id": "betsy.bestialite.wounds.bonus",
+                            "label": "Souche 'Bestialité' (+3)",
+                            "value": 5
+                        }
+                    ]
+                }
+            }
+        },
+        "damageBonus": {
+            "melee": {
+                "id": "damageBonus.melee",
+                "label": "Bonus aux Dégâts (Corps à corps)",
+                "value": 6,
+                "baseValue": 3,
+                "modifier": 3,
+                "modifiers": [
+                    {
+                        "id": "betsy.bestialite.damage-bonus.melee.bonus",
+                        "label": "Souche 'Bestialité' (+3)",
+                        "value": 3
+                    }
+                ]
+            },
+            "ranged": {
+                "id": "damageBonus.ranged",
+                "label": "Bonus aux Dégâts (Distance)",
+                "value": 2,
+                "baseValue": 2,
+                "modifier": 0,
+                "modifiers": []
+            }
+        },
+        "skills": {
+            "acrobatie": {
+                "id": "skills.acrobatie",
+                "label": "Acrobatie",
+                "value": 8,
+                "baseValue": 6,
+                "modifier": 2,
+                "modifiers": [
+                    {
+                        "id": "betsy.bestialite.skills.acrobatie.bonus",
+                        "label": "Souche 'Bestialité' (+2)",
+                        "value": 2
+                    }
+                ]
+            },
+            "athletisme": {
+                "id": "skills.athletisme",
+                "label": "Athlétisme",
+                "value": 12,
+                "baseValue": 9,
+                "modifier": 3,
+                "modifiers": [
+                    {
+                        "id": "betsy.bestialite.skills.athletisme.bonus",
+                        "label": "Souche 'Bestialité' (+3)",
+                        "value": 3
+                    }
+                ]
+            },
+            "connaissance": {
+                "id": "skills.connaissance",
+                "label": "Connaissance",
+                "value": 9,
+                "baseValue": 7,
+                "modifier": 2,
+                "modifiers": [
+                    {
+                        "id": "betsy.bestialite.skills.connaissance.bonus",
+                        "label": "Souche 'Bestialité' (+2)",
+                        "value": 2
+                    }
+                ],
+                "specialized": true,
+                "specializations": "Démolition"
+            }
+        }
+    }
+}

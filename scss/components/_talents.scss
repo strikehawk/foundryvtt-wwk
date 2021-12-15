@@ -1,0 +1,12 @@
+.talents {
+    display: flex;
+    
+    .free-text {
+        // height: 60px;
+        min-height: 60px;
+    }
+
+    .editor {
+        height: 100%;
+    }
+}

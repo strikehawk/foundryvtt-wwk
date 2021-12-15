@@ -1,0 +1,46 @@
+{{log "viewMode" data.viewMode}}
+<ol class="items-list skills">
+    {{#if data.viewMode}}
+    {{#each data.skills as |skill id|}}
+    <li class="skill flexrow flex-group-left" data-item-id="{{skill.uuid}}">
+
+        <div class="skill-name flexrow">
+            <h4>{{skill.label}}{{formatSpecializations skill}}</h4>
+            <input name="data.skills.{{id}}.specializations" type="hidden" data-dtype="String"
+                value="{{skill.specializations}}" />
+        </div>
+        <div class="skill-current-value">
+            <span>{{numberFormat skill.value decimals=0}}</span>
+            <input name="data.skills.{{id}}.baseValue" type="hidden" data-dtype="Number" value="{{skill.baseValue}}" />
+        </div>
+        <a class="skill-roll rollable" title="Roll Skill" data-roll="2d6+1d6+@skills.{{id}}.value"
+            data-label="{{skill.label}}"><i class="fas fa-dice-d20"></i></a>
+        <input name="data.skills.{{id}}.augmented" type="hidden" />
+        <a class="skill-control skill-edit" title="Edit Skill"><i class="fas fa-edit"></i></a>
+    </li>
+    {{/each}}
+    {{/if}}
+
+    {{#unless data.viewMode}}
+    {{#each data.skills as |skill id|}}
+    <li class="skill flexrow flex-group-left" data-item-id="{{skill.uuid}}">
+        <div class="skill-name flexrow">
+            <h4>{{skill.label}}{{formatSpecializations skill}}</h4>
+            <input name="data.skills.{{id}}.specializations" type="hidden" data-dtype="String"
+                value="{{skill.specializations}}" />
+        </div>
+        <div class="skill-current-value">
+            <span>{{numberFormat skill.value decimals=0}}</span>
+            <input name="data.skills.{{id}}.baseValue" type="text" class="skill-value" data-dtype="Number"
+                value="{{numberFormat skill.baseValue decimals=0}}" />
+        </div>
+        <div class="skill-augment flexrow flex-group-left">
+            <input name="data.skills.{{id}}.augmented" type="checkbox" {{#if skill.augmented}}checked{{/if}} />
+            <span>aug.</span>
+        </div>
+        <a class="skill-control skill-edit" title="Edit Skill"><i class="fas fa-edit"></i></a>
+    </li>
+    {{/each}}
+    {{/unless}}
+
+</ol>
