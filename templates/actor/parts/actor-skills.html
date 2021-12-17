@@ -1,8 +1,8 @@
-{{log "viewMode" data.viewMode}}
-<ol class="items-list skills">
+<div class="title-2">Compétences</div>
+<div class="skills">
     {{#if data.viewMode}}
     {{#each data.skills as |skill id|}}
-    <li class="skill fxLayoutRow align-items-end fxLayoutGap-8" data-item-id="{{skill.uuid}}">
+    <div class="skill fxLayoutRow align-items-baseline fxLayoutGap-8" data-item-id="{{skill.uuid}}">
         <div class="skill-name fxLayoutRow">
             <div>{{skill.label}}{{formatSpecializations skill}}</div>
             <input name="data.skills.{{id}}.specializations" type="hidden" data-dtype="String"
@@ -16,13 +16,13 @@
             <a class="action-icon-large rollable" title="Faire un jet de Compétence" data-roll="2d6+1d6+@skills.{{id}}.value"
                 data-label="{{skill.label}}"><i class="fas fa-dice-d20"></i></a>
         </div>
-    </li>
+    </div>
     {{/each}}
     {{/if}}
 
     {{#unless data.viewMode}}
     {{#each data.skills as |skill id|}}
-    <li class="skill flexrow flex-group-left" data-item-id="{{skill.uuid}}">
+    <div class="skill fxLayoutRow align-items-baseline fxLayoutGap-8" data-item-id="{{skill.uuid}}">
         <div class="skill-name flexrow">
             <h4>{{skill.label}}{{formatSpecializations skill}}</h4>
             <input name="data.skills.{{id}}.specializations" type="hidden" data-dtype="String"
@@ -38,8 +38,8 @@
             <span>aug.</span>
         </div>
         <a class="skill-control skill-edit" title="Edit Skill"><i class="fas fa-edit"></i></a>
-    </li>
+    </div>
     {{/each}}
     {{/unless}}
 
-</ol>
+</div>

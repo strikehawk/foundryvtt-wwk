@@ -18,8 +18,8 @@ export class WwkActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["wwk", "sheet", "actor"],
       template: `systems/${wwkGlobal.systemFolder}/templates/actor/actor-hero-sheet.html`,
-      width: 600,
-      height: 600,
+      width: 800,
+      height: 650,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
     });
   }
@@ -122,12 +122,20 @@ export class WwkActorSheet extends ActorSheet {
     context.data.damageBonus.melee.baseValue = archetype.data.damageBonus.melee;
     context.data.damageBonus.ranged.baseValue = archetype.data.damageBonus.ranged;
 
+    // Handle talents
+    if (!context.data.talents) {
+      context.data.talents = foundry.utils.deepClone(archetype.data.talents);
+    }
+    const currentTalents = context.data.talents;
+    Object.assign(currentTalents[0], archetype.data.talents[0]);
+    Object.assign(currentTalents[1], archetype.data.talents[1]);
+
     // Handle skills.
     const currentSkills = context.data.skills;
     const newSkills = {};
 
-    let currentSkill;
     let skill;
+    let currentSkill;
     for (let [k, v] of Object.entries(archetype.data.skills)) {
       currentSkill = currentSkills[k];
 
@@ -280,13 +288,7 @@ export class WwkActorSheet extends ActorSheet {
     }
   }
 
-  // async _updateObject(event, formData) {
-  //   const actorData = this.actor.data;
-  //   Object.assign(actorData, formData);
-
-  //   // Prepare Hero data and items.
-  //   if (actorData.type == 'hero') {
-  //     this._prepareCharacterData(this.actor);
-  //   }
-  // }
+  async _updateObject(event, formData) {
+    super._updateObject(event, formData);
+  }
 }

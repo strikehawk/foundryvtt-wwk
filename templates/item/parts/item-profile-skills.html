@@ -1,0 +1,14 @@
+<div class="fxLayoutColumn fxLayoutGap-8 align-items-stretch">
+    <div class="fxLayoutRow fxLayoutGap-8 fxFlex">
+        <div class="title-2 fxFlex">Compétences améliorées</div>
+        <a class="action-icon-large skill-add" title="Ajouter compétence"><i class="fas fa-plus-square"></i></a>
+    </div>
+    <div class="fxLayoutColumn fxLayoutGap-8 align-items-stretch">
+        {{#each data.boostedSkills as |skill id|}}
+        <div class="fxLayoutRow fxLayoutGap-8 boosted-skill" data-index="{{id}}">
+            <input class="fxFlex" type="text" name="data.boostedSkills" data-dtype="String" value="{{skill}}"/>
+            <a class="action-icon-large skill-remove" title="Supprimer compétence"><i class="fas fa-minus-square"></i></a>
+        </div>
+        {{/each}}
+    </div>
+</div>

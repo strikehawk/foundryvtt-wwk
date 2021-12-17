@@ -1,5 +1,6 @@
 import { ItemSheetBehaviorBase } from "./item-sheet.behavior.mjs";
 import { ItemSheetHeroArchetypeBehavior } from "./item-sheet-hero-archetype.behavior.mjs";
+import { ItemSheetProfileBehavior } from "./item-sheet-profile.behavior.mjs";
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
@@ -33,7 +34,8 @@ export class WwkItemSheet extends ItemSheet {
     switch (item.type) {
       case "hero-archetype":
         return ItemSheetHeroArchetypeBehavior;
-      case "talent":
+      case "profile":
+        return ItemSheetProfileBehavior
       default:
         return ItemSheetBehaviorBase;
     }

@@ -60,14 +60,14 @@
                 "resources",
                 "damageBonusSet",
                 "skillSet"
-            ]
+            ],
+            "talents": [false, false]
         }
     },
     "Item": {
         "types": [
             "hero-archetype",
-            "profile",
-            "profileFeature"
+            "profile"
         ],
         "templates": {
             "basicValue": {
@@ -172,17 +172,17 @@
                     "augmented": false, 
                     "modifier": 0
                 },
+                "perception": {
+                    "baseValue": 2,
+                    "augmented": false, 
+                    "modifier": 0
+                },
                 "pilotage": {
                     "baseValue": 2,
                     "augmented": false, 
                     "modifier": 0,
                     "specialized": true,
                     "specializations": ""
-                },
-                "perception": {
-                    "baseValue": 2,
-                    "augmented": false, 
-                    "modifier": 0
                 },
                 "psychologie": {
                     "baseValue": 2,
@@ -246,11 +246,9 @@
         "profile": {
             "name": "XXX",
             "generalSkillBonus": 2,
+            "boostedSkillBonus": 3,
             "boostedSkills": [],
-            "features": []
-        },
-        "profileFeature": {
-            "description": ""
+            "features": {}
         }
     }
 }

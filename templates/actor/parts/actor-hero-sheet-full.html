@@ -1,0 +1,27 @@
+<div class="fxLayoutRow align-items-start fxLayoutGap-16">
+    <div class="fxLayoutColumn fxLayoutGap-16 fxFlex">
+        <div class="sheet-header fxLayoutRow fxLayoutGap-8">
+            <img class="profile-img" src="{{archetype.img}}" data-edit="img" title="{{archetype.name}}" height="100"
+                width="100" />
+            <section class="fxLayoutColumn align-items-stretch fxLayoutGap-4 fxFlex">
+                <div class="fxLayoutRow fxLayoutGap-8">
+                    <div class="title-3">Acteur</div>
+                    <input class="fxFlex" name="name" type="text" value="{{actor.name}}" placeholder="Nom" />
+                </div>
+                <div class="title-1">{{archetype.name}}</div>
+                <div class="title-2 font-weight-normal">{{archetype.data.description.occupation}}</div>
+            </section>
+        </div>
+
+        <section>
+            {{> "systems/wwk/templates/actor/parts/actor-combat.html"}}
+        </section>
+
+        <section>
+            {{> "systems/wwk/templates/actor/parts/actor-talents.html"}}
+        </section>
+    </div>
+    <div class="fxLayoutColumn fxFlex">
+        {{> "systems/wwk/templates/actor/parts/actor-skills.html"}}
+    </div>
+</div>

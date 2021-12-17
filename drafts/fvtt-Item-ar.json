@@ -1,0 +1,32 @@
+{
+  "name": "ar",
+  "type": "profile",
+  "img": "icons/svg/item-bag.svg",
+  "data": {
+    "name": "XXX",
+    "generalSkillBonus": 2,
+    "boostedSkillBonus": 3,
+    "boostedSkills": [],
+    "features": {
+      "0": {
+        "id": "ID nouveau trait 1",
+        "description": "<p>Nouveau trait 1</p>"
+      },
+      "1": {
+        "id": "ID nouveau trait 2",
+        "description": "<p>Nouveau trait 2</p>"
+      }
+    },
+    "img": "icons/svg/item-bag.svg"
+  },
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "exportSource": {
+      "world": "wwk",
+      "system": "wwk",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.0.0"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<form class="{{cssClass}} talents fxLayoutColumn" autocomplete="off">
+    <div class="fxLayoutColumn fxLayoutGap-8 align-items-stretch">
+        <div class="fxLayoutRow fxLayoutGap-8 feature" data-index="{{id}}">
+            <input class="fxFlex" type="text" name="id" data-dtype="String" value="{{object.id}}" />
+            <a class="action-icon-large feature-remove" title="Supprimer trait"><i class="fas fa-minus-square"></i></a>
+        </div>
+        <div class="editor-small">
+            {{editor content=object.description target="description" rollData=rollData button=true
+            editable=true
+            owner=owner}}
+        </div>
+    </div>
+</form>

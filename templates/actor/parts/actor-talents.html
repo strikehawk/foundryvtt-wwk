@@ -1,0 +1,26 @@
+<div class="fxLayoutColumn fxLayoutGap-8 talents">
+    <div class="title-2">Atouts</div>
+    <div class="fxLayoutRow align-items-start fxLayoutGap-16 talents">
+        {{#each data.talents as |talent id|}}
+        <section class="fxLayoutColumn fxFlex fxLayoutGap-8 talent" data-index="{{id}}">
+            <div class="fxLayoutRow fxLayoutGap-8">
+                <div class="title-2 fxFlex">{{talent.name}}</div>
+                <input type="hidden" name="data.talents.{{id}}.name" value="{{talent.name}}"/>
+                <input type="checkbox" name="data.talents.{{id}}.chosen" {{#if talent.chosen}}checked{{/if}} />
+            </div>
+            <div class="fxLayoutColumn fxFlex">
+                <div class="title-3">Effet normal</div>
+                <input type="hidden" name="data.talents.{{id}}.normalEffect" value="{{talent.normalEffect}}"/>
+                <div class="free-text">{{readonlyEditor content=talent.normalEffect
+                    rollData=rollData owner=owner}}</div>
+            </div>
+            <div class="fxLayoutColumn fxFlex">
+                <div class="title-3">Effet héroïque</div>
+                <input type="hidden" name="data.talents.{{id}}.heroicEffect" value="{{talent.heroicEffect}}"/>
+                <div class="free-text">{{readonlyEditor content=talent.heroicEffect
+                    rollData=rollData owner=owner}}</div>
+            </div>
+        </section>
+        {{/each}}
+    </div>
+</div>
