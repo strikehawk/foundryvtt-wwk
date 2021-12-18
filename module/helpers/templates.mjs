@@ -24,7 +24,6 @@ export const preloadHandlebarsTemplates = async function () {
     `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-skills.html`,
     `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-skill-form.html`,
     `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-hero-sheet-full.html`,
-    `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-hero-sheet-full-alt.html`,
 
     // Item partials
     `systems/${wwkGlobal.systemFolder}/templates/item/parts/item-profile-skills.html`,
