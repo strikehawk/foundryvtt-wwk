@@ -1,0 +1,168 @@
+{
+  "name": "paul-king",
+  "type": "hero-archetype",
+  "img": "icons/svg/item-bag.svg",
+  "data": {
+    "description": {
+      "occupation": "",
+      "bio": "",
+      "quote": ""
+    },
+    "resources": {
+      "hp": 0,
+      "wounds": 0
+    },
+    "damageBonus": {
+      "melee": 2,
+      "ranged": 2
+    },
+    "skills": {
+      "acrobatie": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "athletisme": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "autorite": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "combat-cac": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "combat-distance": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "connaissance": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": ""
+      },
+      "defense": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "discretion": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "documentation": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "eloquence": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "equitation": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "intellect": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "langue": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": ""
+      },
+      "muscles": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "perception": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "pilotage": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": ""
+      },
+      "psychologie": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "reflexes": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "resistance": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "soins": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "survie": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "technique": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": ""
+      },
+      "volonte": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      }
+    },
+    "talents": {
+      "0": {
+        "name": "Nom de l'atout",
+        "normalEffect": "Effet normal",
+        "heroicEffect": "Effet héroïque"
+      },
+      "1": {
+        "name": "Nom de l'atout",
+        "normalEffect": "Effet normal",
+        "heroicEffect": "Effet héroïque"
+      }
+    },
+    "img": "icons/svg/item-bag.svg"
+  },
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "exportSource": {
+      "world": "wwk",
+      "system": "wwk",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.0.0"
+    }
+  }
+}

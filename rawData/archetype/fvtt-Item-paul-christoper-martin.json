@@ -1,0 +1,168 @@
+{
+  "name": "Paul King",
+  "type": "hero-archetype",
+  "img": "systems/wwk/assets/img/paul-king.jpg",
+  "data": {
+    "description": {
+      "occupation": "Pilote de NASCAR",
+      "bio": "Paul s'est déjà cassé tous les os et certains plus d'une fois.\nTout ça pour montrer qu'il est le plus fort, le plus rapide… Pilote émérite de NASCAR au <em>Houston Motorsports Park</em> (stock-cars principalement), c'est aussi un tchatcheur de première. Cela fait bien longtemps qu'il s'occupe seul et tant bien que mal d'Ethan, son fils de 10 ans, sa femme l'ayant quitté sans laisser d'adresse. (Il la trompait très fréquemment.)",
+      "quote": "Je suis le meilleur. Je suis prêt à relever n'importe quel défi, à soulever n'importe quelle montage !"
+    },
+    "resources": {
+      "hp": 12,
+      "wounds": 7
+    },
+    "damageBonus": {
+      "melee": 2,
+      "ranged": 2
+    },
+    "skills": {
+      "acrobatie": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "athletisme": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "autorite": {
+        "baseValue": 4,
+        "augmented": false,
+        "modifier": 0
+      },
+      "combat-cac": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "combat-distance": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "connaissance": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": "Physique"
+      },
+      "defense": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "discretion": {
+        "baseValue": 7,
+        "augmented": false,
+        "modifier": 0
+      },
+      "documentation": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "eloquence": {
+        "baseValue": 8,
+        "augmented": false,
+        "modifier": 0
+      },
+      "equitation": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "intellect": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "langue": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": "Anglais, Espagnol, Français"
+      },
+      "muscles": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "perception": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "pilotage": {
+        "baseValue": 9,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": "Automobiles, Hélicoptères"
+      },
+      "psychologie": {
+        "baseValue": 7,
+        "augmented": false,
+        "modifier": 0
+      },
+      "reflexes": {
+        "baseValue": 7,
+        "augmented": false,
+        "modifier": 0
+      },
+      "resistance": {
+        "baseValue": 7,
+        "augmented": false,
+        "modifier": 0
+      },
+      "soins": {
+        "baseValue": 4,
+        "augmented": false,
+        "modifier": 0
+      },
+      "survie": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "technique": {
+        "baseValue": 8,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": "Mécanique, Electronique"
+      },
+      "volonte": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      }
+    },
+    "talents": {
+      "0": {
+        "name": "Stock-cars !",
+        "normalEffect": "<div>Lorsqu'il conduit, Paul bénéficie d'un bonus de + 4 aux dégâts infligés par son véhicule. De plus, lorsqu'il choisit la pénalité <em>Risque</em> pour son action, il peut choisir deux primes en retour.</div>",
+        "heroicEffect": "<div>Au choix : annulez des dégâts infligés à un véhicule ; ou, si le véhicule conduit par Paul se crashe, réduisez les dégâts infligés aux passagers à 1d6 au total.</div>"
+      },
+      "1": {
+        "name": "Si tu fais la moindre erreur, je te crame !",
+        "normalEffect": "<div>Paul sait repérer et exploiter les faiblesses de ses adversaires. Il bénéficie d'un bonus de + 2 aux attaques et de 4 aux dégâts contre les ennemis - personnages ou véhicules - ayant 5 PV (personnage) / 8 PV (véhicule) restants ou moins.</div>",
+        "heroicEffect": "<div>Pendant quinze minutes, l'atout s'applique à tout adversaire à qui il reste 10 PV ou moins.</div>"
+      }
+    },
+    "img": "systems/wwk/assets/img/paul-king.jpg"
+  },
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "exportSource": {
+      "world": "wwk",
+      "system": "wwk",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.0.0"
+    }
+  }
+}

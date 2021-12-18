@@ -38,12 +38,37 @@
 
 .sheet-tabs {
   flex: 0;
+  background-color: #c5c2b0;
 }
 
-.sheet-body,
 .sheet-body .tab,
 .sheet-body .tab .editor {
   height: 100%;
+}
+
+.sheet-body .tab {
+  &>* {
+    height: 100%;
+  }
+}
+
+a:hover {
+  text-shadow: 0 0 10px #121010;
+}
+
+.tabs {
+  .item.active {
+    text-shadow: 0 0 10px #121010;
+  }
+}
+
+.tab-container {
+  overflow: auto;
+  padding-right: 8px;
+
+  > * {
+    max-height: 0;
+  }
 }
 
 .tox {
@@ -96,12 +121,14 @@ textarea {
   border-radius: 4px;
 }
 
-div.numerical-value, span.numerical-value {
+div.numerical-value,
+span.numerical-value {
   width: 20px;
   text-align: center;
 }
 
-input[type="text"],input[type="number"] {
+input[type="text"],
+input[type="number"] {
   &.numerical-value {
     width: 30px;
     text-align: center;
@@ -109,7 +136,6 @@ input[type="text"],input[type="number"] {
 }
 
 .free-text {
-  // height: 60px;
   min-height: 60px;
 }
 
@@ -117,6 +143,10 @@ input[type="text"],input[type="number"] {
   padding: 8px;
   border: 1px solid #7a7971;
   border-radius: 3px;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .editor-small {

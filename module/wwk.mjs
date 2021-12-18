@@ -3,6 +3,7 @@ import { WwkActor } from "./documents/actor.mjs";
 import { WwkItem } from "./documents/item.mjs";
 // Import sheet classes.
 import { WwkActorSheet } from "./sheets/actor-sheet.mjs";
+import { WwkGenericActorSheet } from "./sheets/actor-generic-sheet.mjs";
 import { WwkItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates, addHandlebarsHelpers } from "./helpers/templates.mjs";
@@ -43,8 +44,9 @@ Hooks.once('init', async function() {
   CONFIG.Item.documentClass = WwkItem;
 
   // Register sheet application classes
-  Actors.unregisterSheet("core", ActorSheet);
+  // Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("wwk", WwkActorSheet, { makeDefault: true });
+  Actors.registerSheet("wwk", WwkGenericActorSheet, { makeDefault: false });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("wwk", WwkItemSheet, { makeDefault: true });
 

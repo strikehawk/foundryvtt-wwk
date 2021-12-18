@@ -1,24 +1,12 @@
 <div class="fxLayoutColumn fxLayoutGap-8 align-items-stretch">
-    <div class="fxLayoutRow fxLayoutGap-8 fxFlex">
-        <div class="title-2 fxFlex">Traits</div>
-        <!-- <a class="action-icon-large feature-add" title="Ajouter trait"><i class="fas fa-plus-square"></i></a> -->
-    </div>
     <div class="fxLayoutColumn fxLayoutGap-8 align-items-stretch">
         {{#each data.features as |feature id|}}
-        <div class="fxLayoutColumn fxLayoutGap-8 align-items-stretch fieldset">
-            <!-- <input type="hidden" name="data.features.{{id}}.id" value="{{feature.id}}"/>
-            <input type="hidden" name="data.features.{{id}}.description" value="{{feature.description}}"/> -->
+        <div class="fxLayoutColumn fxLayoutGap-8 align-items-stretch">
 
             <div class="fxLayoutRow fxLayoutGap-8 feature" data-index="{{id}}">
                 <div class="field-label fxFlex">{{feature.id}}</div>
-                <!-- <a class="action-icon-large feature-edit" title="Editer trait"><i
-                        class="fas fa-edit"></i></a>
-                <a class="action-icon-large feature-remove" title="Supprimer trait"><i
-                        class="fas fa-minus-square"></i></a> -->
             </div>
-            <div class="free-text">{{readonlyEditor content=feature.description rollData=rollData owner=owner}}</div>
-            <!-- <div class="editor-small">
-            </div> -->
+            <div>{{readonlyEditor content=feature.description rollData=rollData owner=owner}}</div>
 
             {{#if feature.bonus}}
             <div class="fxLayoutColumn fxLayoutGap-4 align-items-stretch">

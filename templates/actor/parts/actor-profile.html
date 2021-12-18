@@ -1,0 +1,45 @@
+{{#if profile}}
+{{#with profile as | item |}}
+<div class="fxLayoutColumn fxLayoutGap-16">
+    <div class="fxLayoutRow fxLayoutGap-8">
+        <div class="title-1-alt" style="font-size: 26px;">{{item.name}}</div>
+        <a class="action-icon-large profile-remove" title="Supprimer Souche" data-index="{{item._id}}"><i
+                class="fas fa-minus-square"></i></a>
+    </div>
+
+    <div class="fxLayoutColumn fxLayoutGap-8">
+        <div class="fxLayoutRow flex-group-left fxLayoutGap-8">
+            <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                <div class="field-label">Bonus compétences</div>
+                <div class="dotted-line fxFlex"></div>
+            </div>
+            <div class="numerical-value">{{numberFormat data.generalSkillBonus decimals=0 sign=true}}</div>
+        </div>
+
+        <div class="fxLayoutRow flex-group-left fxLayoutGap-8">
+            <div class="fxLayoutRow fxFlex align-items-baseline fxLayoutGap-8">
+                <div class="field-label">Compétences améliorées</div>
+                <div class="dotted-line fxFlex"></div>
+                <div>{{data.boostedSkillsLabels}}</div>
+            </div>
+        </div>
+
+        <div class="fxLayoutRow flex-group-left fxLayoutGap-8">
+            <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                <div class="field-label">Bonus compétences améliorées</div>
+                <div class="dotted-line fxFlex"></div>
+            </div>
+            <div class="numerical-value">{{numberFormat data.boostedSkillBonus decimals=0 sign=true}}</div>
+        </div>
+
+    </div>
+    {{> "systems/wwk/templates/item/parts/item-profile-features.html"}}
+</div>
+{{/with}}
+{{/if}}
+
+{{#unless profile}}
+<div class="fxLayoutColumn axis-align-center align-items-center fxFlex drop-zone" style="max-height: unset;">
+    <div>Veuillez glisser une souche Betsy jusqu'à la fiche de personnage</div>
+</div>
+{{/unless}}

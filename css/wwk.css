@@ -359,17 +359,17 @@
 
 @font-face {
   font-family: "El Tercer Hombre";
-  src: url("/systems/wwk/assets/fonts/el-tercer-hombre.ttf");
+  src: url("../assets/fonts/el-tercer-hombre.ttf");
 }
 
 @font-face {
-  font-family: "Victor";
-  src: url("/systems/wwk/assets/fonts/victor.otf");
+  font-family: "Black Folder";
+  src: url("../assets/fonts/black-folder.otf");
 }
 
 @font-face {
   font-family: "Saint Tropez";
-  src: url("/systems/wwk/assets/fonts/saint-tropez.otf");
+  src: url("../assets/fonts/saint-tropez.otf");
 }
 
 /* Styles limited to boilerplate sheets */
@@ -437,12 +437,33 @@
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
+  background-color: #c5c2b0;
 }
 
-.wwk .sheet-body,
 .wwk .sheet-body .tab,
 .wwk .sheet-body .tab .editor {
   height: 100%;
+}
+
+.wwk .sheet-body .tab > * {
+  height: 100%;
+}
+
+.wwk a:hover {
+  text-shadow: 0 0 10px #121010;
+}
+
+.wwk .tabs .item.active {
+  text-shadow: 0 0 10px #121010;
+}
+
+.wwk .tab-container {
+  overflow: auto;
+  padding-right: 8px;
+}
+
+.wwk .tab-container > * {
+  max-height: 0;
 }
 
 .wwk .tox .tox-editor-container {
@@ -494,12 +515,14 @@
   border-radius: 4px;
 }
 
-.wwk div.numerical-value, .wwk span.numerical-value {
+.wwk div.numerical-value,
+.wwk span.numerical-value {
   width: 20px;
   text-align: center;
 }
 
-.wwk input[type="text"].numerical-value, .wwk input[type="number"].numerical-value {
+.wwk input[type="text"].numerical-value,
+.wwk input[type="number"].numerical-value {
   width: 30px;
   text-align: center;
 }
@@ -512,6 +535,10 @@
   padding: 8px;
   border: 1px solid #7a7971;
   border-radius: 3px;
+}
+
+.wwk .overflow-auto {
+  overflow: auto;
 }
 
 .wwk .editor-small {
@@ -824,23 +851,15 @@
   margin: 0;
 }
 
-.wwk .talents {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.wwk .talents .free-text {
-  min-height: 60px;
-}
-
-.wwk .talents .editor {
-  height: 100%;
-}
-
 .title-1 {
   font-family: "El Tercer Hombre";
   font-size: 46px;
+  text-transform: uppercase;
+}
+
+.title-1-alt {
+  font-family: "Black Folder";
+  font-size: 40px;
   text-transform: uppercase;
 }
 

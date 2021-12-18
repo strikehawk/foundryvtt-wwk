@@ -20,12 +20,17 @@
   @import 'components/effects';
   @import 'components/combat';
   @import 'components/skills';
-  @import 'components/talents';
 }
 
 .title-1 {
   font-family: "El Tercer Hombre";
   font-size: 46px;
+  text-transform: uppercase;
+}
+
+.title-1-alt {
+  font-family: "Black Folder";
+  font-size: 40px;
   text-transform: uppercase;
 }
 

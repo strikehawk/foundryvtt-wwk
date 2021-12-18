@@ -3,6 +3,7 @@ import { WWKSettings } from "../helpers/wwk-settings.mjs";
 
 import { setupActorSkillFormListeners } from "./actor-skill-form.mjs";
 import { getSkillIdentifier } from "../helpers/templates.mjs";
+import { ItemSheetProfileBehavior } from "./item-sheet-profile.behavior.mjs";
 
 /** @type {WWKSettings} */
 const wwkGlobal = WWK;
@@ -20,7 +21,7 @@ export class WwkActorSheet extends ActorSheet {
       template: `systems/${wwkGlobal.systemFolder}/templates/actor/actor-hero-sheet.html`,
       width: 800,
       height: 650,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }]
     });
   }
 
@@ -96,6 +97,10 @@ export class WwkActorSheet extends ActorSheet {
     context.gear = gear;
     context.archetype = archetype;
     context.profile = profile;
+
+    if (context.profile) {
+      ItemSheetProfileBehavior.patchItem(context.profile);
+    }
   }
 
   /**
@@ -114,13 +119,19 @@ export class WwkActorSheet extends ActorSheet {
 
     const archetype = context.archetype;
 
+    const modifiableValues = new Map();
+
     // Handle resources.
     context.data.resources.hp.max.baseValue = archetype.data.resources.hp;
+    modifiableValues.set("resources.hp.max", context.data.resources.hp.max);
     context.data.resources.wounds.max.baseValue = archetype.data.resources.wounds;
+    modifiableValues.set("resources.wounds.max", context.data.resources.wounds.max);
 
     // Handle damage bonus
     context.data.damageBonus.melee.baseValue = archetype.data.damageBonus.melee;
+    modifiableValues.set("damageBonus.melee", context.data.damageBonus.melee);
     context.data.damageBonus.ranged.baseValue = archetype.data.damageBonus.ranged;
+    modifiableValues.set("damageBonus.ranged", context.data.damageBonus.ranged);
 
     // Handle talents
     if (!context.data.talents) {
@@ -136,17 +147,67 @@ export class WwkActorSheet extends ActorSheet {
 
     let skill;
     let currentSkill;
+    let skillId;
     for (let [k, v] of Object.entries(archetype.data.skills)) {
-      currentSkill = currentSkills[k];
+      currentSkill = currentSkills[k] ? foundry.utils.deepClone(currentSkills[k]) : {};
+
+      skillId = `skills.${k}`;
 
       skill = foundry.utils.deepClone(v);
-      skill.label = game.i18n.localize(CONFIG.WWK.skills[k]) ?? k;
+      skill.id = skillId;
+      skill.label = game.i18n.localize(wwkGlobal.skills[k]) ?? k;
       skill.uuid = getSkillIdentifier(k, skill);
 
+      skill = Object.assign(currentSkill, skill);
       newSkills[k] = skill;
+
+      modifiableValues.set(skillId, skill);
     }
 
     context.data.skills = newSkills;
+
+    // Apply Profile modifiers
+    this._applyProfile(context, modifiableValues)
+  }
+
+  _applyProfile(context, modifiableValues) {
+    if (context.profile) {
+      let modifiableValue;
+
+      const boostedSkills = new Set(context.profile.data.boostedSkills);
+
+      // Handle skills.
+      let skillModifier;
+      let valueId;
+      let bonus;
+
+      for (let [k, v] of Object.entries(context.data.skills)) {
+        skillModifier = boostedSkills.has(k) ? context.profile.data.boostedSkillBonus : context.profile.data.generalSkillBonus;
+        valueId = `skills.${k}`;
+        modifiableValue = modifiableValues.get(valueId);
+        modifiableValue.modifiers = [];
+
+        bonus = { valueId, modifier: skillModifier };
+        modifiableValue.modifiers.push(bonus);
+      }
+
+      for (const feature of Object.values(context.profile.data.features)) {
+        if (Array.isArray(feature.bonus)) {
+          for (const bonus of feature.bonus) {
+            if (!bonus.valueId) {
+              console.error(`No valueId for bonus`);
+              continue;
+            }
+
+            // Get the value
+            modifiableValue = modifiableValues.get(bonus.valueId);
+            modifiableValue.modifiers = [];
+
+            modifiableValue.modifiers.push(bonus);
+          }
+        }
+      }
+    }
   }
 
   _computeModifiers(context) {
@@ -167,11 +228,19 @@ export class WwkActorSheet extends ActorSheet {
   _processModifiableValue(v) {
     let sumModifiers;
 
+    // Get the system value definition
+    let systemValue = wwkGlobal.values.get(v.id);
+    if (!systemValue) {
+      console.error(v);
+    }
+
+    const valueType = systemValue.type === wwkGlobal.valueTypes.ROLL_EXPRESSION ? wwkGlobal.valueTypes.ROLL_EXPRESSION : wwkGlobal.valueTypes.NUMERICAL;
+
     // Compute sum of modifiers
-    sumModifiers = 0;
+    sumModifiers = valueType === wwkGlobal.valueTypes.ROLL_EXPRESSION ? "" : 0;
     if (v.modifiers) {
       for (const mod of v.modifiers) {
-        sumModifiers += mod.value;
+        sumModifiers += mod.modifier;
       }
     } else {
       v.modifiers = [];
@@ -179,7 +248,8 @@ export class WwkActorSheet extends ActorSheet {
     v.modifier = sumModifiers;
 
     // Calculate the final value
-    v.value = v.baseValue + v.modifier;
+    const baseValue = valueType === wwkGlobal.valueTypes.ROLL_EXPRESSION ? v.baseValue.toString() : v.baseValue;
+    v.value = baseValue + v.modifier;
   }
 
   /* -------------------------------------------- */
@@ -200,6 +270,15 @@ export class WwkActorSheet extends ActorSheet {
     if (!this.isEditable) return;
 
     setupActorSkillFormListeners(html, this);
+
+    // Add Inventory Item
+    html.find('.profile-remove').click(ev => {
+      const index = $(ev.currentTarget).data("index");
+      const item = this.actor.items.get(index);
+      item.delete();
+
+      this.render(false);
+    });
 
     // Add Inventory Item
     html.find('.item-create').click(this._onItemCreate.bind(this));

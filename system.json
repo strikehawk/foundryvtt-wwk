@@ -12,20 +12,8 @@
     "styles": [
       "css/wwk.css"
     ],
-    "packs": [
-      {
-        "name": "items",
-        "label": "Items",
-        "path": "packs/items.db",
-        "entity": "Item"
-      }
-    ],
+    "packs": [],
     "languages": [
-      {
-        "lang": "en",
-        "name": "English",
-        "path": "lang/en.json"
-      },
       {
         "lang": "fr",
         "name": "Français",

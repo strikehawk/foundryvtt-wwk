@@ -15,8 +15,8 @@ export class ItemProfileFormApplication extends FormApplication {
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            width: 400,
-            height: 550,
+            width: 600,
+            height: 560,
             classes: ["wwk", "sheet", "form"],
             popOut: true,
             template: `systems/${wwkGlobal.systemFolder}/templates/item/item-profile-sheet.html`,

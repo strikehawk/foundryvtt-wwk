@@ -1,0 +1,168 @@
+{
+  "name": "Kenneth Green",
+  "type": "hero-archetype",
+  "img": "systems/wwk/assets/img/kenneth-green.jpg",
+  "data": {
+    "description": {
+      "occupation": "Ouvrier",
+      "bio": "Le tempérament colérique de Kenneth lui a toujours créé des problèmes.\nLe sang irlandais qui coule dans ses veines se met à bouillir à la moindre provocation. Ouvrier de construction sur les chantiers de Houston, il partage un petit appartement avec sa grande sœur Elisha, femme de ménage avec qui il s'entend parfaitement bien.",
+      "quote": "Si tu me chies dans les bottes, je viendrai te le faire regretter. Qui que tu sois. Où que tu te trouves."
+    },
+    "resources": {
+      "hp": 13,
+      "wounds": 7
+    },
+    "damageBonus": {
+      "melee": 3,
+      "ranged": 2
+    },
+    "skills": {
+      "acrobatie": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "athletisme": {
+        "baseValue": 9,
+        "augmented": false,
+        "modifier": 0
+      },
+      "autorite": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "combat-cac": {
+        "baseValue": 7,
+        "augmented": false,
+        "modifier": 0
+      },
+      "combat-distance": {
+        "baseValue": 4,
+        "augmented": false,
+        "modifier": 0
+      },
+      "connaissance": {
+        "baseValue": 7,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": "Démolition"
+      },
+      "defense": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "discretion": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "documentation": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "eloquence": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "equitation": {
+        "baseValue": 2,
+        "augmented": false,
+        "modifier": 0
+      },
+      "intellect": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      },
+      "langue": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": "Anglais, Espagnol, Français"
+      },
+      "muscles": {
+        "baseValue": 8,
+        "augmented": false,
+        "modifier": 0
+      },
+      "perception": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "pilotage": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": "Moto"
+      },
+      "psychologie": {
+        "baseValue": 4,
+        "augmented": false,
+        "modifier": 0
+      },
+      "reflexes": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "resistance": {
+        "baseValue": 7,
+        "augmented": false,
+        "modifier": 0
+      },
+      "soins": {
+        "baseValue": 6,
+        "augmented": false,
+        "modifier": 0
+      },
+      "survie": {
+        "baseValue": 7,
+        "augmented": false,
+        "modifier": 0
+      },
+      "technique": {
+        "baseValue": 8,
+        "augmented": false,
+        "modifier": 0,
+        "specialized": true,
+        "specializations": "Mécanique"
+      },
+      "volonte": {
+        "baseValue": 5,
+        "augmented": false,
+        "modifier": 0
+      }
+    },
+    "talents": {
+      "0": {
+        "name": "Bulldozer",
+        "normalEffect": "<div>Les d&eacute;g&acirc;ts que Kenneth inflige au corps &agrave; corps b&eacute;n&eacute;ficie d'un bonus de +1d6.</div>\n<div>Lorsqu'il r&eacute;ussit une telle attaque contre un adversaire qui n'est pas un Boss, il se r&eacute;sultat du d&eacute; rouge est de 5 ou 6, sa cible est envoy&eacute;e au sol, sonn&eacute;e. Elle ne peut pas effectuer de d'action &agrave; son prochain tour de jeu.</div>",
+        "heroicEffect": "<div>Les d&eacute;g&acirc;ts d'une attaque au corps &agrave; corps de Kenneth sont augment&eacute;s de 2d6. Cet effet fonctionne sur tout type d'adversaire.</div>"
+      },
+      "1": {
+        "name": "Dans le tas !",
+        "normalEffect": "<div>Lorsque vous choisissez la p&eacute;nalit&eacute; <em>Danger </em>pour une attaque de Kenneth, vous pouvez prendre en contrepartie deux primes diff&eacute;rentes - autres que <em>Prudence</em>.</div>",
+        "heroicEffect": "<div>Les ennemis sont oblig&eacute;s de vous prendre pour cible jusqu'&agrave; la fin du round. Vous b&eacute;n&eacute;ficiez d'un bonus de +2 &agrave; la valeur de votre protection durant tout ce temps. Vous pouvez activer cet effet en dehors de votre tour de jeu, et l'annuler quand vous le souhaitez.</div>"
+      }
+    },
+    "img": "systems/wwk/assets/img/kenneth-green.jpg"
+  },
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "exportSource": {
+      "world": "wwk",
+      "system": "wwk",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.0.0"
+    }
+  }
+}

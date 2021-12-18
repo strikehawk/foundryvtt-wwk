@@ -1,0 +1,52 @@
+<div class="fxLayoutColumn fxLayoutGap-16 fxFlex">
+    <div class="sheet-header fxLayoutRow fxLayoutGap-8">
+        <img class="profile-img" src="{{archetype.img}}" data-edit="img" title="{{archetype.name}}" height="100"
+            width="100" />
+        <section class="fxLayoutColumn align-items-stretch fxLayoutGap-4 fxFlex">
+            <div class="fxLayoutRow fxLayoutGap-8">
+                <div class="title-3">Acteur</div>
+                <input class="fxFlex" name="name" type="text" value="{{actor.name}}" placeholder="Nom" />
+            </div>
+            <div class="title-1">{{archetype.name}}</div>
+            <div class="title-2 font-weight-normal">{{archetype.data.description.occupation}}</div>
+        </section>
+    </div>
+
+    <section>
+        {{> "systems/wwk/templates/actor/parts/actor-combat.html"}}
+    </section>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs title-2" data-group="primary">
+        {{!-- Default tab is specified in actor-sheet.mjs --}}
+        <a class="item" data-tab="skills">Compétences</a>
+        <a class="item" data-tab="talents">Atouts</a>
+        <a class="item" data-tab="profile">Souche</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body fxFlex">
+
+        {{!-- Skills Tab --}}
+        <div class="tab skills" data-group="primary" data-tab="skills">
+            <div class="tab-container fxFlex">
+                {{> "systems/wwk/templates/actor/parts/actor-skills.html"}}
+            </div>
+        </div>
+
+        {{!-- Talents Tab --}}
+        <div class="tab talents" data-group="primary" data-tab="talents">
+            <div class="tab-container fxFlex">
+                {{> "systems/wwk/templates/actor/parts/actor-talents.html"}}
+            </div>
+        </div>
+
+        {{!-- Profile Tab --}}
+        <div class="tab profile" data-group="primary" data-tab="profile">
+            <div class="tab-container fxLayoutColumn fxFlex">
+                {{> "systems/wwk/templates/actor/parts/actor-profile.html"}}
+            </div>
+        </div>
+
+    </section>
+</div>
