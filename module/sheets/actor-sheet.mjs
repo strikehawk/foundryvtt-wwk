@@ -340,7 +340,7 @@ export class WwkActorSheet extends ActorSheet {
    * @param {Event} event   The originating click event
    * @private
    */
-  _onRoll(event) {
+  async _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
@@ -357,7 +357,7 @@ export class WwkActorSheet extends ActorSheet {
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
       let label = dataset.label ? `[Skill] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData()).roll();
+      let roll = await new Roll(dataset.roll, this.actor.getRollData()).evaluate({ async: true });
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,

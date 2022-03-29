@@ -1,12 +1,12 @@
 {
-  "name": "Kenneth Green",
+  "name": "Michelle Taylor",
   "type": "hero-archetype",
-  "img": "systems/wwk/assets/img/kenneth-green2.jpg",
+  "img": "systems/wwk/assets/img/michelle-taylor.jpg",
   "data": {
     "description": {
-      "occupation": "Ouvrier",
-      "bio": "Le tempérament colérique de Kenneth lui a toujours créé des problèmes.\nLe sang irlandais qui coule dans ses veines se met à bouillir à la moindre provocation. Ouvrier de construction sur les chantiers de Houston, il partage un petit appartement avec sa grande sœur Elisha, femme de ménage avec qui il s'entend parfaitement bien.",
-      "quote": "Si tu me chies dans les bottes, je viendrai te le faire regretter. Qui que tu sois. Où que tu te trouves."
+      "occupation": "Rodeo girl",
+      "bio": "Michelle est orpheline. Très tôt, elle a appris que la vie n'était pas facile tous les jours. Elle ne supporte pas ceux qui imposent leur autorité aux plus faibles. N'ayant que peu d'affinité avec ses congénères humains, elle ne s'entend qu'avec les chevaux sauvages, comme le sien : Tornado. C'est ainsi qu'elle est devenue Rodéo Girl à Houston, tenant à l'écart les machos les plus entreprenant avec ses deux crans d'arrêt fétiches.\nPersuadée que le monde est pourri et qu'on ne peut plus rien y faire, elle se met en danger de plus en plus fréquemment, laissant libre cours à ses tendances suicidaires. Lorsqu'elle ne peut pas s'occuper de Tornado, c'est Walton, un vieux cow-boy édenté qui s'en occupe.",
+      "quote": "Chance de réussite quasi nulle ? Taux de mortalité élevé ? Parfait ! On signe où ?"
     },
     "resources": {
       "hp": 13,
@@ -153,7 +153,7 @@
         "heroicEffect": "<div>Les ennemis sont oblig&eacute;s de vous prendre pour cible jusqu'&agrave; la fin du round. Vous b&eacute;n&eacute;ficiez d'un bonus de +2 &agrave; la valeur de votre protection durant tout ce temps. Vous pouvez activer cet effet en dehors de votre tour de jeu, et l'annuler quand vous le souhaitez.</div>"
       }
     },
-    "img": "systems/wwk/assets/img/kenneth-green2.jpg"
+    "img": "systems/wwk/assets/img/michelle-taylor.jpg"
   },
   "effects": [],
   "sort": 0,
