@@ -861,6 +861,13 @@
   -ms-flex-positive: 0;
   flex-grow: 0;
 }
+.action-icon[disabled], .action-icon-large[disabled] {
+  opacity: 40%;
+}
+.action-icon[disabled]:hover, .action-icon-large[disabled]:hover {
+  text-shadow: none;
+  cursor: default;
+}
 
 .action-icon-large {
   font-size: 16px;

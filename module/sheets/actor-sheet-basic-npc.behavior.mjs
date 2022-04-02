@@ -23,13 +23,16 @@ export class ActorSheetBasicNpcBehavior extends ActorSheetBehaviorBase {
     activateListeners(html) {
         // Rollable abilities.
         html.find('.rollable').click(this._onRoll.bind(this));
+
+        // Bind attack roll button to presence of an attack label
+        html.find('.attack-label').change(this._onAttackLabelChange.bind(this));
     }
 
     patchContext(context) {
         this._prepareCharacterData(context);
         this._computeModifiers(context);
     }
-    
+
     /**
      * Parse & prepare Character data.
      *
@@ -37,7 +40,7 @@ export class ActorSheetBasicNpcBehavior extends ActorSheetBehaviorBase {
      *
      * @return {undefined}
      */
-     _prepareCharacterData(context) {
+    _prepareCharacterData(context) {
         context.data.viewMode = true;
 
         if (!context.archetype) {
@@ -121,7 +124,7 @@ export class ActorSheetBasicNpcBehavior extends ActorSheetBehaviorBase {
      * @param {Event} event   The originating click event
      * @private
      */
-     async _onRoll(event) {
+    async _onRoll(event) {
         event.preventDefault();
         const element = event.currentTarget;
         const dataset = element.dataset;
@@ -137,6 +140,10 @@ export class ActorSheetBasicNpcBehavior extends ActorSheetBehaviorBase {
 
         // Handle rolls that supply the formula directly.
         if (dataset.roll) {
+            if (dataset.disabled) {
+                return;
+            }
+
             // attack roll
             if (dataset.rollType) {
                 if (dataset.rollType === "attack") {
@@ -152,6 +159,38 @@ export class ActorSheetBasicNpcBehavior extends ActorSheetBehaviorBase {
                 rollMode: game.settings.get('core', 'rollMode'),
             });
             return roll;
+        }
+    }
+
+    /**
+     * Handle attack label change.
+     * @param {Event} event   The originating change event
+     * @private
+     */
+    _onAttackLabelChange(event) {
+        const element = event.currentTarget;
+        const attackElement = element.closest(".attack");
+        const rollableElement = $(attackElement).find(".rollable");
+
+        const value = element.value?.trim();
+        if (value) {
+            // enable rollable
+            if (rollableElement.attr("disabled")) {
+                rollableElement.removeAttr("disabled");
+            }
+
+            if (rollableElement.data("disabled")) {
+                rollableElement.removeData("disabled");
+            }
+        } else {
+            // disable rollable
+            if (!rollableElement.attr("disabled")) {
+                rollableElement.attr("disabled", true);
+            }
+
+            if (rollableElement.data("disabled")) {
+                rollableElement.data("disabled", true);
+            }
         }
     }
 }

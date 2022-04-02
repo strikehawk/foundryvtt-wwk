@@ -41,7 +41,7 @@
             {{#each data.attacks as |attack id|}}
             <div class="fxLayoutRow align-items-baseline fxLayoutGap-8 attack" data-attack-id="{{id}}">
                 <div class="fxLayoutColumn fxLayoutGap-8 fxFlex">
-                    <input name="data.attacks.{{id}}.label" type="text" value="{{attack.label}}" />
+                    <input class="attack-label" name="data.attacks.{{id}}.label" type="text" value="{{attack.label}}" />
                 </div>
                 <div class="fxLayoutColumn align-items-center fxLayoutGap-8 attack-current-value">
                     <input name="data.attacks.{{id}}.skill" type="text" class="numerical-value" data-dtype="Number"
@@ -56,10 +56,11 @@
                         data-dtype="Number" value="{{numberFormat attack.damageBonus decimals=0}}" />
                 </div>
                 <div class="fxLayoutColumn fxLayoutGap-8 action-icon-large">
-                    <a class="action-icon-large rollable" title="Faire un jet d'Attaque"
-                        data-roll="2d6+1d6+@attacks.{{id}}.skill" data-label="[Attaque] {{attack.label}}"
-                        data-roll-type="attack" data-damage-dice="{{attack.damageDice}}"
-                        data-damage-bonus="{{attack.damageBonus}}"><i class="fas fa-dice-d20"></i></a>
+                    <a class="action-icon-large rollable" title="Faire un jet d'Attaque" {{#unless attack.label}}
+                        disabled data-disabled="true" {{/unless}} data-roll="2d6+1d6+@attacks.{{id}}.skill"
+                        data-label="[Attaque] {{attack.label}}" data-roll-type="attack"
+                        data-damage-dice="{{attack.damageDice}}" data-damage-bonus="{{attack.damageBonus}}"><i
+                            class="fas fa-dice-d20"></i></a>
                 </div>
             </div>
             {{/each}}
