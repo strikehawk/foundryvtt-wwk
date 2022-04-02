@@ -850,6 +850,12 @@
   transform: translateY(4px);
 }
 
+.translateY-4 {
+  -webkit-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  transform: translateY(4px);
+}
+
 .font-weight-normal {
   font-weight: normal;
 }
