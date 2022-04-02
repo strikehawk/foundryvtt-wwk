@@ -1,0 +1,77 @@
+<div class="fxLayoutColumn align-items-stretch fxLayoutGap-8">
+    <div class="field-label">Caractéristiques</div>
+
+    <!-- Row 1 -->
+    <div class="fxLayoutRow fxLayoutGap-16">
+
+        <div class="fxLayoutRow flex-group-left fxLayoutGap-8 fxFlex">
+            <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                <div class="title-3">Physique</div>
+                <div class="dotted-line fxFlex"></div>
+            </div>
+            <div class="fxLayoutRow fxLayoutGap-4">
+                <input name="data.stats.physical" type="text" class="numerical-value" data-dtype="Number"
+                    value="{{numberFormat data.stats.physical decimals=0}}" />
+            </div>
+            <div class="fxLayoutColumn fxLayoutGap-8 action-icon-large">
+                <a class="action-icon-large rollable" title="Faire un jet de compétence"
+                    data-roll="2d6+1d6+@stats.physical" data-label="[Physique]" data-roll-type="npc-skill"><i
+                        class="fas fa-dice-d20"></i></a>
+            </div>
+        </div>
+
+        <div class="fxLayoutRow flex-group-left fxLayoutGap-8 fxFlex">
+            <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                <div class="title-3">Habileté</div>
+                <div class="dotted-line fxFlex"></div>
+            </div>
+            <div class="fxLayoutRow fxLayoutGap-4">
+                <input name="data.stats.agility" type="text" class="numerical-value" data-dtype="Number"
+                    value="{{numberFormat data.stats.agility decimals=0}}" />
+            </div>
+            <div class="fxLayoutColumn fxLayoutGap-8 action-icon-large">
+                <a class="action-icon-large rollable" title="Faire un jet de compétence"
+                    data-roll="2d6+1d6+@stats.agility" data-label="[Habileté]" data-roll-type="npc-skill"><i
+                        class="fas fa-dice-d20"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Row 2 -->
+    <div class="fxLayoutRow fxLayoutGap-16">
+
+        <div class="fxLayoutRow flex-group-left fxLayoutGap-8 fxFlex">
+            <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                <div class="title-3">Social</div>
+                <div class="dotted-line fxFlex"></div>
+            </div>
+            <div class="fxLayoutRow fxLayoutGap-4">
+                <input name="data.stats.social" type="text" class="numerical-value" data-dtype="Number"
+                    value="{{numberFormat data.stats.social decimals=0}}" />
+            </div>
+            <div class="fxLayoutColumn fxLayoutGap-8 action-icon-large">
+                <a class="action-icon-large rollable" title="Faire un jet de compétence"
+                    data-roll="2d6+1d6+@stats.social" data-label="[Social]" data-roll-type="npc-skill"><i
+                        class="fas fa-dice-d20"></i></a>
+            </div>
+        </div>
+
+        <div class="fxLayoutRow flex-group-left fxLayoutGap-8 fxFlex">
+            <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                <div class="title-3">Mental</div>
+                <div class="dotted-line fxFlex"></div>
+            </div>
+            <div class="fxLayoutRow fxLayoutGap-4">
+                <input name="data.stats.mental" type="text" class="numerical-value" data-dtype="Number"
+                    value="{{numberFormat data.stats.mental decimals=0}}" />
+            </div>
+            <div class="fxLayoutColumn fxLayoutGap-8 action-icon-large">
+                <a class="action-icon-large rollable" title="Faire un jet de compétence"
+                    data-roll="2d6+1d6+@stats.mental" data-label="[Mental]" data-roll-type="npc-skill"><i
+                        class="fas fa-dice-d20"></i></a>
+            </div>
+        </div>
+
+    </div>
+</div>

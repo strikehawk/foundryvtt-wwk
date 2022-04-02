@@ -1,7 +1,8 @@
 {
     "Actor": {
         "types": [
-            "hero"
+            "hero",
+            "basic-npc"
         ],
         "templates": {
             "resources": {
@@ -53,6 +54,44 @@
             },
             "skillSet": {
                 "skills": {}
+            },
+            "perkSet": {
+                "perks": {}
+            },
+            "npcStats": {
+                "stats": {
+                    "physical": 5,
+                    "agility": 5,
+                    "social": 5,
+                    "mental": 5
+                }
+            },
+            "npcCombat": {
+                "attacks": [
+                    { 
+                        "label": "Attaque 1",
+                        "skill": 5,
+                        "damageDice": 1,
+                        "damageBonus": 2
+                    },
+                    { 
+                        "label": "Attaque 2",
+                        "skill": 5,
+                        "damageDice": 1,
+                        "damageBonus": 2
+                    },
+                    { 
+                        "label": "Attaque 3",
+                        "skill": 5,
+                        "damageDice": 1,
+                        "damageBonus": 2
+                    }
+                ],
+                "defense": 5,
+                "armor": {
+                    "label": "Armure",
+                    "damageReduction": 0
+                }
             }
         },
         "hero": {
@@ -62,6 +101,18 @@
                 "skillSet"
             ],
             "talents": [false, false]
+        },
+        "basic-npc": {
+            "templates": [
+                "resources",
+                "npcStats",
+                "npcCombat"
+            ],
+            "name": "",
+            "profile": "",
+            "features": "",
+            "tactics": "",
+            "gear": ""
         }
     },
     "Item": {

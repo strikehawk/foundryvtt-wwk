@@ -149,10 +149,10 @@ input[type="number"] {
   overflow: auto;
 }
 
+.editor {
+  height: 100%;
+}
+
 .editor-small {
   height: 160px;
-
-  .editor {
-    height: 100%;
-  }
 }

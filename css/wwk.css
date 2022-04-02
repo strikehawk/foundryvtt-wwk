@@ -13,7 +13,7 @@
 .grid,
 .grid-2col {
   display: grid;
-  grid-column: span 2 / span 2;
+  grid-column: span 2/span 2;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   margin: 10px 0;
@@ -21,52 +21,52 @@
 }
 
 .grid-3col {
-  grid-column: span 3 / span 3;
+  grid-column: span 3/span 3;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-4col {
-  grid-column: span 4 / span 4;
+  grid-column: span 4/span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-5col {
-  grid-column: span 5 / span 5;
+  grid-column: span 5/span 5;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-6col {
-  grid-column: span 6 / span 6;
+  grid-column: span 6/span 6;
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .grid-7col {
-  grid-column: span 7 / span 7;
+  grid-column: span 7/span 7;
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .grid-8col {
-  grid-column: span 8 / span 8;
+  grid-column: span 8/span 8;
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .grid-9col {
-  grid-column: span 9 / span 9;
+  grid-column: span 9/span 9;
   grid-template-columns: repeat(9, minmax(0, 1fr));
 }
 
 .grid-10col {
-  grid-column: span 10 / span 10;
+  grid-column: span 10/span 10;
   grid-template-columns: repeat(10, minmax(0, 1fr));
 }
 
 .grid-11col {
-  grid-column: span 11 / span 11;
+  grid-column: span 11/span 11;
   grid-template-columns: repeat(11, minmax(0, 1fr));
 }
 
 .grid-12col {
-  grid-column: span 12 / span 12;
+  grid-column: span 12/span 12;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
@@ -238,32 +238,26 @@
   -ms-flex-align: stretch;
   align-items: stretch;
 }
-
 .fxLayoutColumn.fxLayoutGap-4 > * {
   -webkit-margin-after: 4px;
   margin-block-end: 4px;
 }
-
 .fxLayoutColumn.fxLayoutGap-4 > *:last-child {
   -webkit-margin-after: 0;
   margin-block-end: 0;
 }
-
 .fxLayoutColumn.fxLayoutGap-8 > * {
   -webkit-margin-after: 8px;
   margin-block-end: 8px;
 }
-
 .fxLayoutColumn.fxLayoutGap-8 > *:last-child {
   -webkit-margin-after: 0;
   margin-block-end: 0;
 }
-
 .fxLayoutColumn.fxLayoutGap-16 > * {
   -webkit-margin-after: 16px;
   margin-block-end: 16px;
 }
-
 .fxLayoutColumn.fxLayoutGap-16 > *:last-child {
   -webkit-margin-after: 0;
   margin-block-end: 0;
@@ -284,32 +278,26 @@
   -ms-flex-align: center;
   align-items: center;
 }
-
 .fxLayoutRow.fxLayoutGap-4 > * {
   -webkit-margin-end: 4px;
   margin-inline-end: 4px;
 }
-
 .fxLayoutRow.fxLayoutGap-4 > *:last-child {
   -webkit-margin-end: 0;
   margin-inline-end: 0;
 }
-
 .fxLayoutRow.fxLayoutGap-8 > * {
   -webkit-margin-end: 8px;
   margin-inline-end: 8px;
 }
-
 .fxLayoutRow.fxLayoutGap-8 > *:last-child {
   -webkit-margin-end: 0;
   margin-inline-end: 0;
 }
-
 .fxLayoutRow.fxLayoutGap-16 > * {
   -webkit-margin-end: 16px;
   margin-inline-end: 16px;
 }
-
 .fxLayoutRow.fxLayoutGap-16 > *:last-child {
   -webkit-margin-end: 0;
   margin-inline-end: 0;
@@ -325,6 +313,12 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.axis-align-stretch {
+  -webkit-box-pack: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
 }
 
 .align-items-start {
@@ -361,17 +355,14 @@
   font-family: "El Tercer Hombre";
   src: url("../assets/fonts/el-tercer-hombre.ttf");
 }
-
 @font-face {
   font-family: "Black Folder";
   src: url("../assets/fonts/black-folder.otf");
 }
-
 @font-face {
   font-family: "Saint Tropez";
   src: url("../assets/fonts/saint-tropez.otf");
 }
-
 /* Styles limited to boilerplate sheets */
 .wwk {
   /* Text Input */
@@ -380,11 +371,9 @@
   /* ----------------------------------------- */
   /* Example style for Boilerplate (can be removed if not needed) */
 }
-
 .wwk .item-form {
   font-family: "Roboto", sans-serif;
 }
-
 .wwk .sheet-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 auto;
@@ -404,7 +393,6 @@
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-
 .wwk .sheet-header .profile-img {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
@@ -412,76 +400,62 @@
   height: 100px;
   margin-right: 10px;
 }
-
 .wwk .sheet-header .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-
 .wwk .sheet-header h1.charname {
   height: 30px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
-
 .wwk .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
   font-size: 20px;
 }
-
 .wwk .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
   background-color: #c5c2b0;
 }
-
 .wwk .sheet-body .tab,
 .wwk .sheet-body .tab .editor {
   height: 100%;
 }
-
 .wwk .sheet-body .tab > * {
   height: 100%;
 }
-
 .wwk a:hover {
   text-shadow: 0 0 10px #121010;
 }
-
 .wwk .tabs .item.active {
   text-shadow: 0 0 10px #121010;
 }
-
 .wwk .tab-container {
   overflow: auto;
   padding-right: 8px;
 }
-
 .wwk .tab-container > * {
   max-height: 0;
 }
-
 .wwk .tox .tox-editor-container {
   background: #fff;
 }
-
 .wwk .tox .tox-edit-area {
   padding: 0 8px;
 }
-
-.wwk input[type="text"],
-.wwk input[type="number"],
-.wwk input[type="password"],
-.wwk input[type="date"],
-.wwk input[type="time"] {
+.wwk input[type=text],
+.wwk input[type=number],
+.wwk input[type=password],
+.wwk input[type=date],
+.wwk input[type=time] {
   width: 100%;
 }
-
 .wwk textarea {
   background: rgba(0, 0, 0, 0.05);
   padding: 1px 3px;
@@ -499,56 +473,45 @@
   user-select: text;
   resize: none;
 }
-
 .wwk .remove-transform {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
 }
-
 .wwk .dotted-line {
   border-bottom: 1px dashed #7a7971;
 }
-
 .wwk .drop-zone {
   border: 1px dashed #7a7971;
   border-radius: 4px;
 }
-
 .wwk div.numerical-value,
 .wwk span.numerical-value {
   width: 20px;
   text-align: center;
 }
-
-.wwk input[type="text"].numerical-value,
-.wwk input[type="number"].numerical-value {
+.wwk input[type=text].numerical-value,
+.wwk input[type=number].numerical-value {
   width: 30px;
   text-align: center;
 }
-
 .wwk .free-text {
   min-height: 60px;
 }
-
 .wwk .fieldset {
   padding: 8px;
   border: 1px solid #7a7971;
   border-radius: 3px;
 }
-
 .wwk .overflow-auto {
   overflow: auto;
 }
-
+.wwk .editor {
+  height: 100%;
+}
 .wwk .editor-small {
   height: 160px;
 }
-
-.wwk .editor-small .editor {
-  height: 100%;
-}
-
 .wwk .items-header {
   height: 28px;
   margin: 2px 0;
@@ -560,12 +523,10 @@
   border: 2px groove #eeede0;
   font-weight: bold;
 }
-
 .wwk .items-header > * {
   font-size: 14px;
   text-align: center;
 }
-
 .wwk .items-header .item-name {
   font-weight: bold;
   padding-left: 5px;
@@ -574,7 +535,6 @@
   display: -ms-flexbox;
   display: flex;
 }
-
 .wwk .items-list {
   list-style: none;
   margin: 0;
@@ -583,13 +543,11 @@
   scrollbar-width: thin;
   color: #444;
 }
-
 .wwk .items-list .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 .wwk .items-list .item-name {
   -webkit-box-flex: 2;
   -ms-flex: 2;
@@ -605,13 +563,11 @@
   display: -ms-flexbox;
   display: flex;
 }
-
 .wwk .items-list .item-name h3, .wwk .items-list .item-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
 }
-
 .wwk .items-list .item-controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -623,13 +579,11 @@
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
-
 .wwk .items-list .item-controls a {
   font-size: 12px;
   text-align: center;
   margin: 0 6px;
 }
-
 .wwk .items-list .item {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -637,15 +591,12 @@
   padding: 0 2px;
   border-bottom: 1px solid #c9c7b8;
 }
-
 .wwk .items-list .item:last-child {
   border-bottom: none;
 }
-
 .wwk .items-list .item .item-name {
   color: #191813;
 }
-
 .wwk .items-list .item .item-name .item-image {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 30px;
@@ -655,14 +606,12 @@
   border: none;
   margin-right: 5px;
 }
-
 .wwk .items-list .item-prop {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-
 .wwk .items-list .items-header {
   height: 28px;
   margin: 2px 0;
@@ -674,24 +623,20 @@
   border: 2px groove #eeede0;
   font-weight: bold;
 }
-
 .wwk .items-list .items-header > * {
   font-size: 12px;
   text-align: center;
 }
-
 .wwk .items-list .items-header .item-name {
   padding-left: 5px;
   text-align: left;
 }
-
 .wwk .item-formula {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 200px;
   flex: 0 0 200px;
   padding: 0 8px;
 }
-
 .wwk .effects .item .effect-source,
 .wwk .effects .item .effect-duration,
 .wwk .effects .item .effect-controls {
@@ -700,28 +645,23 @@
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-
 .wwk .effects .item .effect-controls {
   border: none;
 }
-
 .wwk .combat .resource {
   line-height: 26px;
   border: none;
   margin-bottom: 5px;
 }
-
 .wwk .combat .resource:last-child {
   margin-bottom: 0;
 }
-
 .wwk .combat .resource .resource-name {
   color: #191813;
   font-family: "Saint Tropez";
   font-weight: bold;
   text-transform: uppercase;
 }
-
 .wwk .combat .resource .resource-value {
   -webkit-box-flex: 0;
   -ms-flex: 0;
@@ -730,27 +670,22 @@
   min-width: 35px;
   text-align: center;
 }
-
 .wwk .combat .resource .resource-separator {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
   margin: 0 4px 0 4px;
 }
-
 .wwk .skills .skill {
   border: none;
   margin-bottom: 5px;
 }
-
 .wwk .skills .skill:last-child {
   margin-bottom: 0;
 }
-
 .wwk .skills .skill .skill-name {
   color: #191813;
 }
-
 .wwk .skills a.skill-control, .wwk .skills a.skill-roll {
   font-size: 12px;
   text-align: center;
@@ -759,38 +694,31 @@
   -ms-flex-positive: 0;
   flex-grow: 0;
 }
-
 .wwk .skills a.skill-roll {
   font-size: 16px;
 }
-
 .wwk .skills .skill-current-value {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
 }
-
 .wwk .skills .skill-value {
   width: 35px;
   text-align: center;
 }
-
 .wwk .skills .skill-augment {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50px;
   flex: 0 0 50px;
 }
-
-.wwk .skills .skill-augment input[type="checkbox"] {
+.wwk .skills .skill-augment input[type=checkbox] {
   height: 16px;
   width: 16px;
   margin: 2px;
 }
-
 .wwk .skills .skill-augment span {
   font-size: 10px;
 }
-
 .wwk .actor-skill-form > div.flexrow {
   margin-bottom: 8px;
   line-height: 26px;
@@ -799,28 +727,23 @@
   -ms-flex-align: center;
   align-items: center;
 }
-
 .wwk .actor-skill-form > div.flexrow:last-child {
   margin-bottom: none;
 }
-
 .wwk .actor-skill-form .skill-name {
   font-weight: bold;
 }
-
 .wwk .actor-skill-form .skill-base-value {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   line-height: 26px;
 }
-
 .wwk .actor-skill-form .skill-base-value span {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
-
 .wwk .actor-skill-form .skill-base-value .skill-value {
   width: 35px;
   text-align: center;
@@ -828,27 +751,70 @@
   -ms-flex: 0 0 35px;
   flex: 0 0 35px;
 }
-
 .wwk .actor-skill-form .skill-augmented {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-
 .wwk .actor-skill-form .skill-augmented span {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   vertical-align: middle;
 }
-
-.wwk .actor-skill-form .skill-augmented input[type="checkbox"] {
+.wwk .actor-skill-form .skill-augmented input[type=checkbox] {
   -webkit-box-flex: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
   height: 16px;
   width: 16px;
   margin: 0;
+}
+.wwk .basic-npc .general-label {
+  width: 50px;
+}
+.wwk .basic-npc .info-headers {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  height: 30px;
+}
+.wwk .basic-npc .info-headers .title-3 {
+  text-align: center;
+}
+.wwk .basic-npc .attack-current-value {
+  overflow-wrap: break-word;
+  width: 30px;
+}
+.wwk .basic-npc .defense-current-value {
+  overflow-wrap: break-word;
+  width: 30px;
+}
+.wwk .basic-npc .npc-attacks .attack {
+  border: none;
+  margin-bottom: 5px;
+}
+.wwk .basic-npc .npc-attacks .attack:last-child {
+  margin-bottom: 0;
+}
+.wwk .basic-npc .npc-attacks .attack .attack-name {
+  color: #191813;
+}
+.wwk .basic-npc .npc-attacks a.attack-control, .wwk .basic-npc .npc-attacks a.attack-roll {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+.wwk .basic-npc .npc-attacks a.attack-roll {
+  font-size: 16px;
+}
+.wwk .basic-npc .npc-attacks .attack-skill {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
 }
 
 .title-1 {
@@ -898,4 +864,5 @@
 
 .action-icon-large {
   font-size: 16px;
+  width: 19px;
 }

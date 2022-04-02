@@ -1,0 +1,111 @@
+<div class="fxLayoutColumn align-items-stretch fxLayoutGap-8">
+    <div class="fxLayoutRow flex-group-left fxLayoutGap-8">
+        <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+            <div class="field-label">Points de Vitalité</div>
+            <div class="dotted-line fxFlex"></div>
+        </div>
+        <div class="fxLayoutRow fxLayoutGap-4">
+            <input name="data.resources.hp.value" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.resources.hp.value decimals=0}}" />
+            <span class="resource-separator">/</span>
+            <input name="data.resources.hp.max.value" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.resources.hp.max.value decimals=0}}" />
+        </div>
+    </div>
+
+    <!-- <div class="fxLayoutRow fxLayoutGap-8">
+        <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+            <div class="field-label">Blessures</div>
+            <div class="dotted-line fxFlex"></div>
+        </div>
+        <div class="fxLayoutRow fxLayoutGap-4">
+            <input name="data.resources.wounds.value" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.resources.wounds.value decimals=0}}" />
+            <span class="resource-separator">/</span>
+            <input name="data.resources.wounds.max.value" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.resources.wounds.max.value decimals=0}}" />
+        </div>
+    </div> -->
+
+    <div class="fxLayoutRow align-items-start fxLayoutGap-16">
+        <div class="fxLayoutColumn fxFlex fxLayoutGap-8 npc-attacks">
+            <div class="fxLayoutRow align-items-end fxLayoutGap-8 info-headers">
+                <div class="field-label fxFlex">Attaque</div>
+                <div class="title-3 attack-current-value" title="Jet de compétence associé à l'attaque">Jet</div>
+                <div class="title-3 attack-current-value" title="Nombre de d6 de dégâts en cas d'attaque réussie">Dés
+                    Dgts</div>
+                <div class="title-3 attack-current-value" title="Modificateur à ajouter aux dégâts">Bon. Dgts</div>
+                <div class="action-icon-large"></div>
+            </div>
+
+            {{#each data.attacks as |attack id|}}
+            <div class="fxLayoutRow align-items-baseline fxLayoutGap-8 attack" data-attack-id="{{id}}">
+                <div class="fxLayoutColumn fxLayoutGap-8 fxFlex">
+                    <input name="data.attacks.{{id}}.label" type="text" value="{{attack.label}}" />
+                </div>
+                <div class="fxLayoutColumn align-items-center fxLayoutGap-8 attack-current-value">
+                    <input name="data.attacks.{{id}}.skill" type="text" class="numerical-value" data-dtype="Number"
+                        value="{{numberFormat attack.skill decimals=0}}" />
+                </div>
+                <div class="fxLayoutColumn align-items-center fxLayoutGap-8 attack-current-value">
+                    <input name="data.attacks.{{id}}.damageDice" type="text" class="numerical-value" data-dtype="Number"
+                        value="{{numberFormat attack.damageDice decimals=0}}" />
+                </div>
+                <div class="fxLayoutColumn align-items-center fxLayoutGap-8 attack-current-value">
+                    <input name="data.attacks.{{id}}.damageBonus" type="text" class="numerical-value"
+                        data-dtype="Number" value="{{numberFormat attack.damageBonus decimals=0}}" />
+                </div>
+                <div class="fxLayoutColumn fxLayoutGap-8 action-icon-large">
+                    <a class="action-icon-large rollable" title="Faire un jet d'Attaque"
+                        data-roll="2d6+1d6+@attacks.{{id}}.skill" data-label="[Attaque] {{attack.label}}"
+                        data-roll-type="attack" data-damage-dice="{{attack.damageDice}}"
+                        data-damage-bonus="{{attack.damageBonus}}"><i class="fas fa-dice-d20"></i></a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="fxLayoutColumn fxFlex fxLayoutGap-8">
+            <div class="fxLayoutRow fxLayoutGap-8 info-headers">
+                <div class="fxLayoutRow fxFlex align-items-end fxLayoutGap-8">
+                    <div class="field-label">Défense</div>
+                    <div class="dotted-line fxFlex"></div>
+                </div>
+                <div class="fxLayoutRow fxLayoutGap-4">
+                    <input name="data.defense" type="text" class="numerical-value" data-dtype="Number"
+                        value="{{numberFormat data.defense decimals=0}}" />
+                </div>
+                <div class="action-icon-large">
+                    <a class="action-icon-large rollable" title="Faire un jet de Défense" data-roll="2d6+1d6+@defense"
+                        data-label="[Défense]" data-roll-type="defense" data-defense-skill="{{data.defense}}"><i
+                            class="fas fa-dice-d20"></i></a>
+                </div>
+            </div>
+
+            <div class="fxLayoutColumn fxLayoutGap-8">
+                <div class="fxLayoutRow fxLayoutGap-8 align-items-end title-3 info-headers">
+                    <div class="fxFlex">Armure</div>
+                    <div class="defense-current-value" title="Réduction à apporter aux dégâts reçus lors d'une attaque">
+                        Réd. Dgts</div>
+                </div>
+                <div class="fxLayoutRow fxLayoutGap-8">
+                    <div class="fxFlex"><input name="data.armor.label" type="text" value="{{data.armor.label}}" /></div>
+                    <div class="defense-current-value" title="Réduction à apporter aux dégâts reçus lors d'une attaque">
+                        <input name="data.armor.damageReduction" type="text" class="numerical-value" data-dtype="Number"
+                            value="{{numberFormat data.armor.damageReduction decimals=0}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fxLayoutRow fxLayoutGap-8">
+        <div class="title-3">Capacités spéciales</div>
+        <input name="data.features" class="fxFlex" type="text" value="{{data.features}}" />
+    </div>
+
+    <div class="fxLayoutRow fxLayoutGap-8">
+        <div class="title-3">Tactique</div>
+        <input name="data.tactics" class="fxFlex" type="text" value="{{data.tactics}}" />
+    </div>
+</div>

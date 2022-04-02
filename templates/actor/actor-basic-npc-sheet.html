@@ -1,0 +1,37 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+    <div class="fxLayoutColumn fxLayoutGap-16 fxFlex">
+        <div class="sheet-header fxLayoutRow fxLayoutGap-8">
+            <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100"
+                width="100" />
+            <section class="fxLayoutColumn align-items-stretch fxLayoutGap-4 fxFlex">
+                <div class="fxLayoutRow fxLayoutGap-8">
+                    <div class="title-3 general-label">Acteur</div>
+                    <input class="fxFlex" name="name" type="text" value="{{actor.name}}" placeholder="Nom" />
+                </div>
+                <div class="fxLayoutRow fxLayoutGap-8">
+                    <div class="title-3 general-label">Profil</div>
+                    <input class="fxFlex" name="data.profile" type="text" value="{{data.profile}}"
+                        placeholder="Profil" />
+                </div>
+            </section>
+        </div>
+
+        <section>
+            {{> "systems/wwk/templates/actor/parts/actor-npc-combat.html"}}
+        </section>
+
+        <section>
+            {{> "systems/wwk/templates/actor/parts/actor-npc-stats.html"}}
+        </section>
+
+        <section class="fxLayoutColumn fxFlex">
+            <div class="fxLayoutColumn align-items-stretch fxLayoutGap-8 fxFlex">
+                <div class="field-label">Equipement</div>
+                <div class="free-text fxFlex">
+                    {{editor content=data.gear target="data.gear" rollData=rollData button=true owner=owner
+                    editable=true}}
+                </div>
+            </div>
+        </section>
+    </div>
+</form>

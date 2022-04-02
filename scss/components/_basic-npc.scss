@@ -1,0 +1,56 @@
+.basic-npc {
+    // General
+    .general-label {
+        width: 50px;
+    }
+
+    // Combat
+    .info-headers {
+        align-items: flex-end;
+        height: 30px;
+
+        .title-3 {
+            text-align: center;
+        }
+    }
+
+    .attack-current-value {
+        overflow-wrap: break-word;
+        width: 30px;
+    }
+
+    .defense-current-value {
+        overflow-wrap: break-word;
+        width: 30px;
+    }
+
+    .npc-attacks {
+        .attack {
+            border: none;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .attack-name {
+                color: $c-dark;
+            }
+        }
+
+        a.attack-control, a.attack-roll {
+            font-size: 12px;
+            text-align: center;
+            margin: 0 6px;
+            flex-grow: 0;
+        }
+
+        a.attack-roll {
+            font-size: 16px;
+        }
+            
+        .attack-skill {
+            flex: 0;
+        }
+    }
+}

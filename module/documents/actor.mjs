@@ -35,7 +35,11 @@ export class WwkActor extends Actor {
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
-    this._prepareHeroData(actorData);
+    switch (actorData.type) {
+      case "hero":
+        this._prepareHeroData(actorData);
+        break;
+    }
   }
 
   /**
@@ -61,7 +65,11 @@ export class WwkActor extends Actor {
     const data = super.getRollData();
 
     // Prepare character roll data.
-    this._getHeroRollData(data);
+    switch (this.data.type) {
+      case "hero":
+        this._getHeroRollData(data);
+        break;
+    }
 
     return data;
   }
@@ -70,8 +78,6 @@ export class WwkActor extends Actor {
    * Prepare character roll data.
    */
   _getHeroRollData(data) {
-    if (this.data.type !== 'hero') return;
-
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
     if (data.skills) {

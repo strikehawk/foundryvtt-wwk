@@ -1,0 +1,122 @@
+{
+  "name": "Ninja",
+  "type": "basic-npc",
+  "img": "icons/svg/mystery-man.svg",
+  "data": {
+    "resources": {
+      "hp": {
+        "value": 10,
+        "max": {
+          "id": "resources.hp.max",
+          "label": "Points de Vitalité (max)",
+          "value": 10,
+          "baseValue": 10,
+          "modifier": 0,
+          "modifiers": []
+        }
+      },
+      "wounds": {
+        "value": 0,
+        "max": {
+          "id": "resources.wounds.max",
+          "label": "Blessures (max)",
+          "value": 5,
+          "baseValue": 5,
+          "modifier": 0,
+          "modifiers": []
+        }
+      }
+    },
+    "stats": {
+      "physical": 5,
+      "agility": 5,
+      "social": 5,
+      "mental": 5
+    },
+    "attacks": {
+      "label": [
+        "Attaque 1",
+        "Attaque 2",
+        "Attaque 3"
+      ],
+      "skill": [
+        "5",
+        "5",
+        "5"
+      ],
+      "damage": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    "armor": {
+      "label": "Armure",
+      "damageReduction": 0
+    },
+    "name": "",
+    "profile": "",
+    "features": "",
+    "tactics": "",
+    "gear": ""
+  },
+  "token": {
+    "name": "Ninja",
+    "img": "icons/svg/mystery-man.svg",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "resources.hp"
+    },
+    "bar2": {
+      "attribute": "resources.wounds"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [],
+  "effects": [],
+  "flags": {
+    "exportSource": {
+      "world": "wwk",
+      "system": "wwk",
+      "coreVersion": "9.242",
+      "systemVersion": "1.0.0"
+    }
+  }
+}
