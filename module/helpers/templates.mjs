@@ -19,6 +19,7 @@ export const preloadHandlebarsTemplates = async function () {
 
     // Actor partials.
     `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-hero-combat.html`,
+    `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-hero-notes.html`,
     `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-npc-combat.html`,
     `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-npc-stats.html`,
     `systems/${wwkGlobal.systemFolder}/templates/actor/parts/actor-talents.html`,

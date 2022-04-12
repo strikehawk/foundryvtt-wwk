@@ -22,6 +22,7 @@
         <a class="item" data-tab="skills">Compétences</a>
         <a class="item" data-tab="talents">Atouts</a>
         <a class="item" data-tab="profile">Souche</a>
+        <a class="item" data-tab="notes">Notes</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -45,6 +46,13 @@
         <div class="tab profile" data-group="primary" data-tab="profile">
             <div class="tab-container fxLayoutColumn fxFlex">
                 {{> "systems/wwk/templates/actor/parts/actor-profile.html"}}
+            </div>
+        </div>
+
+        {{!-- Notes Tab --}}
+        <div class="tab hero-notes" data-group="primary" data-tab="notes">
+            <div class="tab-container fxLayoutColumn fxFlex">
+                {{> "systems/wwk/templates/actor/parts/actor-hero-notes.html"}}
             </div>
         </div>
 

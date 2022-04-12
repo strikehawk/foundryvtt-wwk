@@ -816,6 +816,9 @@
   -ms-flex: 0;
   flex: 0;
 }
+.wwk .hero-notes-block {
+  max-height: unset;
+}
 
 .title-1 {
   font-family: "El Tercer Hombre";

@@ -1,0 +1,17 @@
+<div class="fxLayoutColumn align-items-stretch fxLayoutGap-16 fxFlex hero-notes-block">
+    <div class="fxLayoutColumn align-items-stretch fxLayoutGap-8 fxFlex">
+        <div class="field-label">Notes</div>
+        <div class="free-text fxFlex">
+            {{editor content=data.notes target="data.notes" rollData=rollData button=true owner=owner
+            editable=true}}
+        </div>
+    </div>
+
+    <div class="fxLayoutColumn align-items-stretch fxLayoutGap-8 fxFlex">
+        <div class="field-label">Possessions</div>
+        <div class="free-text fxFlex">
+            {{editor content=data.gear target="data.gear" rollData=rollData button=true owner=owner
+            editable=true}}
+        </div>
+    </div>
+</div>
