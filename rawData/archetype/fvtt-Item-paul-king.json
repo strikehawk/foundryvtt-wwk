@@ -1,7 +1,7 @@
 {
   "name": "Paul King",
   "type": "hero-archetype",
-  "img": "systems/wwk/assets/img/paul-king.jpg",
+  "img": "systems/wwk/assets/img/portraits/paul-king.jpg",
   "data": {
     "description": {
       "occupation": "Pilote de NASCAR",
