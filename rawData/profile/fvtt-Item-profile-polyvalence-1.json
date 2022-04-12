@@ -1,9 +1,9 @@
 {
-  "name": "Polyvalence",
+  "name": "Polyvalence I",
   "type": "profile",
   "img": "icons/svg/item-bag.svg",
   "data": {
-    "name": "Polyvalence",
+    "name": "Polyvalence I",
     "generalSkillBonus": 2,
     "boostedSkillBonus": 2,
     "boostedSkills": [],

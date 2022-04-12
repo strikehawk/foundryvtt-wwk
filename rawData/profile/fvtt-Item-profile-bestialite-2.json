@@ -1,0 +1,68 @@
+{
+  "name": "Bestialité II",
+  "type": "profile",
+  "img": "icons/svg/item-bag.svg",
+  "data": {
+    "name": "Bestialité II",
+    "generalSkillBonus": 2,
+    "boostedSkillBonus": 5,
+    "boostedSkills": [
+      "athletisme",
+      "combat-cac",
+      "muscles",
+      "resistance"
+    ],
+    "features": {
+      "Changements physiologiques": {
+        "id": "Changements physiologiques",
+        "description": "<div>Le personnage perçoit distinctement la présence d'autres porteurs d'une souche Betsy dans les cinquante mètres, et plus vaguement jusqu'à trois cent mètres. Il est immunisé contre tout agent bactérien, fongique ou viral et subit sans problème des températures entre -30°C et 60°C.</div>",
+        "bonus": []
+      },
+      "Bonus aux caractéristiques I": {
+        "id": "Bonus aux caractéristiques I",
+        "description": "<div>Les bactéries de synthèse améliorent les capacités physiques et intellectuelles du personnage, il obtient + 2 à toutes les compétences sauf aux compétences liées à la souche, pour lesquelles il obtient + 3 : <em>Athlétisme</em>, <em>Combat (corps à corps)</em>, <em>Muscles</em> et <em>Résistance</em>. Ses PV maximum augmentent de 5 et son bonus dégâts (corps à corps) augmente de 3.</div>",
+        "bonus": [
+          {
+            "valueId": "resources.hp.max",
+            "modifier": 5
+          },
+          {
+            "valueId": "damageBonus.melee",
+            "modifier": "+3"
+          }
+        ]
+      },
+      "Bonus aux caractéristiques II": {
+        "id": "Bonus aux caractéristiques II",
+        "description": "<div>Les valeurs des comp&eacute;tences li&eacute;es &agrave; la souche obtiennent un bonus suppl&eacute;mentaire de 2.</div>",
+        "bonus": [
+          {
+            "valueId": "damageBonus.melee",
+            "modifier": "+2"
+          }
+        ]
+      },
+      "Captation de l'oxygène": {
+        "id": "Captation de l'oxygène",
+        "description": "<div>Captation de l'oxygène par l'épiderme de tout le corps. La respiration n'est pas nécessaire tant que le milieu ambiant contient de l'oxygène (même en quantité infime). Par exemple, le personnage peut survivre dans l'eau comme un poisson.</div>",
+        "bonus": []
+      },
+      "Force extraordinaire": {
+        "id": "Force extraordinaire",
+        "description": "<div><strong>1 PB:</strong> au prix d'une action, le personnage concentre dans ses muscles l'extraordinaire &eacute;nergie fournie par Betsy: il peut casser un objet ou un mur solide (jusqu'&agrave; un mur en parpaings), arracher ou soulever un objet tr&egrave;s lourd (un lampadaire ou une moto par exemple) et s'en servir pour frapper avec, ou pour lancer sur une cible (&agrave; dix m&egrave;tres maximum) avec des d&eacute;g&acirc;ts de base &eacute;gaux &agrave; 3d6. De plus durant 15 minutes, son bonus de d&eacute;g&acirc;ts (corps &agrave; corps) augmente de 3.</div>",
+        "bonus": []
+      }
+    },
+    "img": "icons/svg/item-bag.svg"
+  },
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "exportSource": {
+      "world": "wwk",
+      "system": "wwk",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.0.0"
+    }
+  }
+}

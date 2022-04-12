@@ -1,0 +1,47 @@
+{
+  "name": "Polyvalence II",
+  "type": "profile",
+  "img": "icons/svg/item-bag.svg",
+  "data": {
+    "name": "Polyvalence II",
+    "generalSkillBonus": 2,
+    "boostedSkillBonus": 2,
+    "boostedSkills": [],
+    "features": {
+      "Changements physiologiques": {
+        "id": "Changements physiologiques",
+        "description": "<div>Le personnage perçoit distinctement la présence d'autres porteurs d'une souche Betsy dans les cinquante mètres, et plus vaguement jusqu'à trois cent mètres. Il est immunisé contre tout agent bactérien, fongique ou viral et subit sans problème des températures entre -60°C et 120°C.</div>",
+        "bonus": []
+      },
+      "Bonus aux caractéristiques": {
+        "id": "Bonus aux caractéristiques",
+        "description": "<div>Les bactéries de synthèse améliorent les capacités physiques et intellectuelles du personnage, il obtient + 2 à toutes les compétences.</div>",
+        "bonus": [
+          {
+            "valueId": "resources.hp.max",
+            "modifier": 10
+          },
+          {
+            "valueId": "damageBonus.melee",
+            "modifier": "+2"
+          },
+          {
+            "valueId": "damageBonus.ranged",
+            "modifier": "+2"
+          }
+        ]
+      }
+    },
+    "img": "icons/svg/item-bag.svg"
+  },
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "exportSource": {
+      "world": "wwk",
+      "system": "wwk",
+      "coreVersion": "0.8.9",
+      "systemVersion": "1.0.0"
+    }
+  }
+}

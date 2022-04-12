@@ -1,9 +1,9 @@
 {
-  "name": "Virtuosité",
+  "name": "Virtuosité I",
   "type": "profile",
   "img": "icons/svg/item-bag.svg",
   "data": {
-    "name": "Virtuosité",
+    "name": "Virtuosité I",
     "generalSkillBonus": 2,
     "boostedSkills": [
         "acrobatie",

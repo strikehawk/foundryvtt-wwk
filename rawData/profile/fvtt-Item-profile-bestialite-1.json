@@ -1,9 +1,9 @@
 {
-  "name": "Bestialité",
+  "name": "Bestialité I",
   "type": "profile",
   "img": "icons/svg/item-bag.svg",
   "data": {
-    "name": "Bestialité",
+    "name": "Bestialité I",
     "generalSkillBonus": 2,
     "boostedSkillBonus": 3,
     "boostedSkills": [
@@ -18,8 +18,8 @@
         "description": "<div>Le personnage perçoit distinctement la présence d'autres porteurs d'une souche Betsy dans les cinquante mètres, et plus vaguement jusqu'à trois cent mètres. Il est immunisé contre tout agent bactérien, fongique ou viral et subit sans problème des températures entre -30°C et 60°C.</div>",
         "bonus": []
       },
-      "Bonus aux caractéristiques": {
-        "id": "Bonus aux caractéristiques",
+      "Bonus aux caractéristiques I": {
+        "id": "Bonus aux caractéristiques I",
         "description": "<div>Les bactéries de synthèse améliorent les capacités physiques et intellectuelles du personnage, il obtient + 2 à toutes les compétences sauf aux compétences liées à la souche, pour lesquelles il obtient + 3 : <em>Athlétisme</em>, <em>Combat (corps à corps)</em>, <em>Muscles</em> et <em>Résistance</em>. Ses PV maximum augmentent de 5 et son bonus dégâts (corps à corps) augmente de 3.</div>",
         "bonus": [
           {
