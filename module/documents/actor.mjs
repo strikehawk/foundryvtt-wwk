@@ -1,3 +1,7 @@
+/** @typedef {import("@league-of-foundry-developers/foundry-vtt-types")} */
+
+import { ActorBehaviorSelector } from "./actor-behavior-selector.mjs";
+
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -13,12 +17,6 @@ export class WwkActor extends Actor {
     super.prepareData();
   }
 
-  /** @override */
-  prepareBaseData() {
-    // Data modifications in this step occur before processing embedded
-    // documents or derived data.
-  }
-
   /**
    * @override
    * Augment the basic actor data with additional dynamic data. Typically,
@@ -29,32 +27,11 @@ export class WwkActor extends Actor {
    * is queried and has a roll executed directly from it).
    */
   prepareDerivedData() {
-    const actorData = this.data;
-    const data = actorData.data;
-    const flags = actorData.flags.boilerplate || {};
+    super.prepareDerivedData();
 
-    // Make separate methods for each Actor type (character, npc, etc.) to keep
-    // things organized.
-    switch (actorData.type) {
-      case "hero":
-        this._prepareHeroData(actorData);
-        break;
-    }
-  }
-
-  /**
-   * Prepare Character type specific data
-   */
-  _prepareHeroData(actorData) {
-    if (actorData.type !== 'hero') return;
-
-    // Make modifications to data here. For example:
-    const data = actorData.data;
-
-    // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, skill] of Object.entries(data.skills)) {
-      // Calculate the final value of the skill
-      skill.value = skill.baseValue + (skill.augmented ? 2 : 0) + skill.modifier;
+    const behavior = ActorBehaviorSelector.getBehavior(this);
+    if (behavior && behavior.prepareDerivedData) {
+      behavior.prepareDerivedData(this);
     }
   }
 
@@ -64,27 +41,11 @@ export class WwkActor extends Actor {
   getRollData() {
     const data = super.getRollData();
 
-    // Prepare character roll data.
-    switch (this.data.type) {
-      case "hero":
-        this._getHeroRollData(data);
-        break;
+    const behavior = ActorBehaviorSelector.getBehavior(this);
+    if (behavior && behavior.patchRollData) {
+      behavior.patchRollData(data);
     }
 
     return data;
   }
-
-  /**
-   * Prepare character roll data.
-   */
-  _getHeroRollData(data) {
-    // Copy the ability scores to the top level, so that rolls can use
-    // formulas like `@str.mod + 4`.
-    if (data.skills) {
-      for (let [k, v] of Object.entries(data.skills)) {
-        data[k] = foundry.utils.deepClone(v);
-      }
-    }
-  }
-
 }

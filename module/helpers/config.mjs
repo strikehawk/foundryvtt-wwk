@@ -1,10 +1,17 @@
 import { WWKSettings } from "./wwk-settings.mjs";
 
+
 /**
  * An object containing static data for the game system.
  * @type {WWKSettings}
  */
 export const WWK = {};
+
+/**
+ * The unique identifier of the system. Can act as a namespace.
+ * @type {string}
+ */
+WWK.systemId = "wwk";
 
 /**
  * The name of the folder containing the system.
@@ -44,7 +51,7 @@ WWK.skills = {
 
 WWK.valueTypes = {
   NUMERICAL: "numerical",
-  ROLL_EXPRESSION : "roll-expression",
+  ROLL_EXPRESSION: "roll-expression",
 }
 
 const systemValues = [

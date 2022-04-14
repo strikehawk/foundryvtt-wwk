@@ -36,29 +36,17 @@ export class ItemSheetHeroArchetypeBehavior extends ItemSheetBehaviorBase {
     }
 
     patchContext(context) {
-        if (context.data.skills) {
-            // Handle skills.
-            for (let [k, v] of Object.entries(context.data.skills)) {
-                v.label = game.i18n.localize(CONFIG.WWK.skills[k]) ?? k;
-                v.uuid = getSkillIdentifier(k, v);
+        // if (context.data.skills) {
+        //     // Handle skills.
+        //     for (let [k, v] of Object.entries(context.data.skills)) {
+        //         v.label = game.i18n.localize(CONFIG.WWK.skills[k]) ?? k;
+        //         v.uuid = getSkillIdentifier(k, v);
 
-                // Calculate the final value of the skill
-                v.value = v.baseValue + (v.augmented ? 2 : 0) + v.modifier;
-            }
-        }
+        //         // Calculate the final value of the skill
+        //         v.value = v.baseValue + (v.augmented ? 2 : 0) + v.modifier;
+        //     }
+        // }
     }
-
-    // _updateObject(event, formData) {
-    //     const talents = this.sheet.object.data.data.talents;
-
-    //     let talent;
-    //     for (let i = 0; i < talents.length; i++) {
-    //         talent = talents[i];
-    //         formData[`data.talents.${i}.name`] = talent.name;
-    //         formData[`data.talents.${i}.normalEffect`] = talent.normalEffect;
-    //         formData[`data.talents.${i}.heroicEffect`] = talent.heroicEffect;
-    //     }
-    // }
 
     _onTalentEdit(event) {
         event.preventDefault();

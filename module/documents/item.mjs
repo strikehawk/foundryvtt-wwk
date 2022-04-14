@@ -1,5 +1,9 @@
+/** @typedef {import("@league-of-foundry-developers/foundry-vtt-types")} */
+
 import { WWK } from "../helpers/config.mjs";
 import { WWKSettings } from "../helpers/wwk-settings.mjs";
+
+import { ItemBehaviorSelector } from "./item-behavior-selector.mjs";
 
 /** @type {WWKSettings} */
 const wwkGlobal = WWK;
@@ -22,6 +26,24 @@ export class WwkItem extends Item {
     // As with the actor class, items are documents that can have their data
     // preparation methods overridden (such as prepareBaseData()).
     super.prepareData();
+  }
+
+  /**
+   * @override
+   * Augment the basic item data with additional dynamic data. Typically,
+   * you'll want to handle most of your calculated/derived data in this step.
+   * Data calculated in this step should generally not exist in template.json
+   * (such as ability modifiers rather than ability scores) and should be
+   * available both inside and outside of item sheets (such as if an item
+   * is queried and has a roll executed directly from it).
+   */
+  prepareDerivedData() {
+    super.prepareDerivedData();
+
+    const behavior = ItemBehaviorSelector.getBehavior(this);
+    if (behavior && behavior.prepareDerivedData) {
+      behavior.prepareDerivedData(this.data);
+    }
   }
 
   /**

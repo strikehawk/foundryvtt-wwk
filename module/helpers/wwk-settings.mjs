@@ -36,6 +36,14 @@ export class ValueModifier {
 
 export class WWKSettings {
     /**
+     * @property The unique identifier of the system. Can act as a namespace.
+     * 
+     * @type {string}
+     * @memberof WWKSettings
+     */
+    systemId;
+
+    /**
      * @property The name of the folder containing the system.
      * 
      * @type {string}
